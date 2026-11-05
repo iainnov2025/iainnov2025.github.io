@@ -1,0 +1,28 @@
+{
+  "name": "legalvec-site",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run tests/unit",
+    "test:built": "vitest run tests/built",
+    "test:e2e": "playwright test",
+    "lhci": "lhci autorun"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "node-html-parser": "^9.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^3.2.7"
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  }
+}
