@@ -1,0 +1,55 @@
+---
+// Internal page for the founder's logo choice. Always noindex, never linked.
+import "../styles/base.css";
+const svgs = import.meta.glob("../brand/directions/*/*.svg", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+const get = (d: string, f: string) => svgs[`../brand/directions/${d}/${f}.svg`];
+const directions = [
+  { id: "a", name: "A — « Renvoi »", note: "Serif + un petit carré surélevé, comme un appel de note : chaque affirmation renvoie à sa source." },
+  { id: "b", name: "B — « Minuscule »", note: "Sans-serif précise en minuscules, « vec » dans la couleur d'accent. Plus produit, moins cabinet." },
+  { id: "c", name: "C — « Marge »", note: "Le trait de marge que l'avocat trace à côté d'un passage clé, puis « Legal » droit et « Vec » en italique." },
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>LegalVec — choix du logo (interne)</title>
+    <meta name="description" content="Page interne : trois directions de logo pour LegalVec." />
+    <link rel="canonical" href="https://iainnov2025.github.io/brand-preview/" />
+    <style>
+      .dir { border-top: 1px solid var(--color-line); padding-block: var(--space-7); }
+      .row { display: flex; flex-wrap: wrap; gap: var(--space-5); align-items: center; margin-block: var(--space-4); }
+      .tile { padding: var(--space-5); border: 1px solid var(--color-line); background: var(--color-surface); }
+      .tile.dark { background: var(--color-ink); border-color: var(--color-ink); }
+      .w200 :global(svg) { height: 56px; width: auto; }
+      .m :global(svg) { display: block; }
+      .sample { font-family: var(--font-serif); font-size: var(--step-4); line-height: 1.1; max-width: 22ch; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <p class="kicker">Interne — non indexé</p>
+      <h1>Choisissez une direction de logo</h1>
+      <p>Chaque direction est présentée en couleur, en version sombre, en une couleur, et en icône à 64, 32 et 16 pixels.</p>
+      {directions.map((d) => (
+        <section class="dir">
+          <h2>{d.name}</h2>
+          <p class="muted">{d.note}</p>
+          <div class="row">
+            <div class="tile w200" set:html={get(d.id, "logo")} />
+            <div class="tile dark w200" set:html={get(d.id, "logo-dark")} />
+            <div class="tile w200" set:html={get(d.id, "logo-mono")} />
+          </div>
+          <div class="row">
+            {[64, 32, 16].map((s) => (
+              <div class="m" style={`width:${s}px;height:${s}px`} set:html={get(d.id, "mark").replace("<svg ", `<svg width="${s}" height="${s}" `)} />
+            ))}
+          </div>
+          <p class="sample">Vos dossiers de contentieux, analysés avec les pièces à l'appui.</p>
+        </section>
+      ))}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+/* LegalVec design tokens — single source of truth (copy to apps/web when it starts). */
+:root {
+  /* Colour: deep, muted base + one restrained accent. No gradients. */
+  --color-ink: #12161D;
+  --color-paper: #F6F4EF;
+  --color-surface: #FFFFFF;
+  --color-line: #E2DDD3;
+  --color-muted: #5F646C;
+  --color-accent: #1E4D43;
+  --color-accent-ink: #F6F4EF;
+  --color-accent-soft: #E3ECE8;
+  --color-danger: #9B2C2C;
+  --color-success: #2F6B3A;
+  --color-warning: #8A5A14;
+
+  /* Type */
+  --font-serif: "Newsreader Variable", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Geist Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* Fluid type scale (360px → 1440px) */
+  --step--1: clamp(0.83rem, 0.80rem + 0.13vw, 0.90rem);
+  --step-0: clamp(1.00rem, 0.96rem + 0.19vw, 1.10rem);
+  --step-1: clamp(1.20rem, 1.12rem + 0.37vw, 1.40rem);
+  --step-2: clamp(1.44rem, 1.30rem + 0.65vw, 1.85rem);
+  --step-3: clamp(1.73rem, 1.48rem + 1.11vw, 2.50rem);
+  --step-4: clamp(2.07rem, 1.66rem + 1.85vw, 3.35rem);
+  --step-5: clamp(2.49rem, 1.83rem + 2.93vw, 4.45rem);
+
+  /* Space */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --radius-1: 4px;
+  --radius-2: 10px;
+  --measure: 66ch;
+  --container: 1180px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur-1: 150ms;
+  --dur-2: 250ms;
+  --dur-3: 400ms;
+}
