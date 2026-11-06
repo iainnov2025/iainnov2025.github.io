@@ -1,0 +1,126 @@
+{
+  "timeline": {
+    "Signature du contrat-cadre de distribution GENBIO-CDS-2018-0347": {
+      "date": "2018-03-15",
+      "note": "v1 said 2016-03-15. Piece 01, line 128: « Fait à Lyon, le 15 mars 2018 »."
+    },
+    "Premier signalement de panne sur GEN-6000": {
+      "title": "Premier ticket de support : panne de l'analyseur GEN-6000",
+      "date": "2023-02-18",
+      "sources": [
+        "14_TICKET_SUPPORT_CDS_GEN6000_PANNE_20230218"
+      ],
+      "note": "v1 cited the wiki page Chronologie.md. Piece 14, line 7: « Date de création : 18/02/2023, 14:23 »."
+    },
+    "Découverte d'export illicite vers Madrid": {
+      "title": "Note interne d'audit GEN-BIO sur les connexions depuis Madrid",
+      "date": "2023-08-02",
+      "category": "FAIT",
+      "sources": [
+        "24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802"
+      ],
+      "note": "v1 claimed a discovered illicit export on 2023-08-03, citing Chronologie.md. Piece 24 is dated 2 août 2023 and line 70 says the Madrid connections « semblent correspondre à des activités de recherche légitimes »."
+    },
+    "Dépôt de l'assignation au Tribunal Judiciaire de Paris": {
+      "title": "Audience fixée par l'assignation devant le Tribunal judiciaire de Paris",
+      "date": "2024-01-15",
+      "category": "AUDIENCE",
+      "sources": [
+        "01_ASSIGNATION_EN_JUSTICE"
+      ],
+      "note": "v1 called it a filing date citing Chronologie.md. Assignation, line 21: « À l'audience du 15 janvier 2024, à 9 heures 30 »."
+    },
+    "Date d'exigibilité de la facture 2023-0345": {
+      "date": "2023-04-14",
+      "note": "v1 date wrong. Piece 02: « Date d'exigibilité : 14 avril 2023 »."
+    },
+    "Émission de la facture 2023-0389": {
+      "date": "2023-04-22",
+      "note": "v1 date wrong. Piece 03: « Date d'émission : 22 avril 2023 » / « Date d'exigibilité : 22 mai 2023 »."
+    },
+    "Date d'exigibilité de la facture 2023-0389": {
+      "date": "2023-05-22",
+      "note": "v1 date wrong. Piece 03: « Date d'émission : 22 avril 2023 » / « Date d'exigibilité : 22 mai 2023 »."
+    },
+    "Émission de la facture 2023-0412": {
+      "date": "2023-05-18",
+      "note": "v1 date wrong. Piece 04: « Date d'émission : 18 mai 2023 » / « Date d'exigibilité : 17 juin 2023 »."
+    },
+    "Date d'exigibilité de la facture 2023-0412": {
+      "date": "2023-06-17",
+      "note": "v1 date wrong. Piece 04: « Date d'émission : 18 mai 2023 » / « Date d'exigibilité : 17 juin 2023 »."
+    },
+    "Émission de la facture 2023-0456": {
+      "date": "2023-06-20",
+      "note": "v1 date wrong. Piece 11: « Date d'émission : 20 juin 2023 » / « Date d'exigibilité : 20 juillet 2023 »."
+    },
+    "Date d'exigibilité de la facture 2023-0456": {
+      "date": "2023-07-20",
+      "note": "v1 date wrong. Piece 11: « Date d'émission : 20 juin 2023 » / « Date d'exigibilité : 20 juillet 2023 »."
+    },
+    "Signalement de dysfonctionnements du GEN-6000 par CLINIQUE DU SUD": {
+      "title": "Première lettre de demande de réparation (CLINIQUE DU SUD)",
+      "sources": [
+        "16_DEMANDE_REPARATION_CDS_20230225_LETTER"
+      ],
+      "note": "v1 cited only piece 08. Piece 08 line 62: « nos lettres des 25 février, 20 mars et 15 avril 2023 »; the letter itself is piece 16."
+    },
+    "Signalement de dysfonctionnements du GEN-6000 (2e fois)": {
+      "title": "Deuxième lettre de demande de réparation (CLINIQUE DU SUD)",
+      "date": "2023-03-20",
+      "sources": [
+        "17_DEMANDE_REPARATION_CDS_20230320_LETTER"
+      ],
+      "note": "v1 said 2023-04-25. Piece 08 line 62 lists 25 février, 20 mars, 15 avril; the 20 mars letter is piece 17."
+    },
+    "Suspension des livraisons et blocage des expéditions": {
+      "exclude": true,
+      "note": "Not stated in piece 10 (résiliation notice); no other piece supports a 15 August suspension."
+    }
+  },
+  "deadlines": {
+    "Délai de réponse à la mise en demeure du 12 juin 2023": {
+      "basis": "Mise en demeure du 12 juin 2023 : délai de 15 jours à compter de la réception",
+      "note": "v1 basis « Article 12.2 du Contrat » is wrong (12.2 is the résiliation clause). Piece 07 line 43: « dans un délai de 15 jours … soit au plus tard le 27 juin 2023 »."
+    }
+  },
+  "pieces": {
+    "07_MISE_EN_DEMEURE_GENBIO_20230612": {
+      "replace": [
+        [
+          "nous我们将被迫 de",
+          "nous serons contraints de"
+        ]
+      ],
+      "note": "Generation glitch in the synthetic test piece (stray Chinese characters); restored the evident French."
+    },
+    "17_DEMANDE_REPARATION_CDS_20230320_LETTER": {
+      "replace": [
+        [
+          "nous我们将被迫 de",
+          "nous serons contraints de"
+        ]
+      ],
+      "note": "Same generation glitch as piece 07."
+    }
+  },
+  "swot": {
+    "Preuves documentaires des factures impayées (127 450 € TTC)": {
+      "text": "Factures impayées de juin à août 2023 : 127 450 € TTC réclamés dans l'assignation",
+      "sources": [
+        "01_ASSIGNATION_EN_JUSTICE",
+        "11_FACTURE_GENBIO_2023_0456_JUIN",
+        "12_FACTURE_GENBIO_2023_0498_JUILLET",
+        "13_FACTURE_GENBIO_2023_0512_AOUT"
+      ],
+      "note": "v1 cited the March–May invoices (02, 03, 04: 134 184 € TTC together). Assignation line 83: 127 450 € TTC « factures des mois de juin, juillet et août 2023 – Pièces n°11, n°12 et n°13 »."
+    },
+    "Logs GEN-TRACE documentant 1 247 flacons exportés vers Madrid (revente illicite)": {
+      "text": "Logs GEN-TRACE : environ 1 247 flacons exportés vers Madrid, à l'appui de la revente alléguée",
+      "sources": [
+        "09_LOGS_EXPORT_GENTRACE_2022_2023"
+      ],
+      "note": "v1 gave no source. Piece 09 line 55: « Nombre estimatif de flacons : 1 247 unités » (an estimate; resale is GEN-BIO's allegation)."
+    }
+  }
+}

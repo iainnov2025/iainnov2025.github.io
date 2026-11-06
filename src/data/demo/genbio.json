@@ -1,0 +1,630 @@
+{
+  "reference": "GEN-2024-08471",
+  "title": "SAS GEN-BIO c/ CLINIQUE DU SUD",
+  "jurisdiction": "Tribunal Judiciaire de Paris",
+  "perspective": "demandeur",
+  "parties": [
+    {
+      "name": "SAS GEN-BIO",
+      "role": "Demandeur"
+    },
+    {
+      "name": "CLINIQUE DU SUD",
+      "role": "Défendeur"
+    }
+  ],
+  "claims": [
+    "Paiement de 127 450 € TTC de factures impayées (mars–août 2023)",
+    "Indemnisation de 1 200 000 € pour rupture brutale (Art. L. 442-1 II C.com.)",
+    "Restitution de 380 000 € HT pour revente illicite en Espagne (Art. L. 442-6 C.com.)",
+    "Dommages et intérêts pour violation de la clause d'exclusivité (art. 8.3 du Contrat)"
+  ],
+  "position": {
+    "level": "Fragile",
+    "justification": "La position de GEN-BIO est affaiblie par des lacunes probatoires majeures et des risques critiques liés à la connaissance préalable des défauts du GEN-6000, bien que certains fondements juridiques et preuves soient solides.",
+    "summary": "La position de GEN-BIO repose sur des fondements juridiques solides (rupture brutale, violation de clause d'exclusivité) et des preuves documentaires des factures impayées et de la revente illicite. Cependant, cette position est sérieusement fragilisée par des risques critiques liés à la connaissance préalable des défauts du GEN-6000 (email Pièce 21) et à la possible préméditation de la rupture (WhatsApp Pièce 22). La reconvention de CLINIQUE DU SUD pour défaut de conformité (850 000 €) ajoute un risque financier majeur. Pour renforcer sa position, GEN-BIO doit impérativement obtenir les pièces manquantes (Pièces 21 et 22), produire les preuves des signalements de dysfonctionnements, et solliciter une expertise technique indépendante. Sans ces éléments, la probabilité de succès total reste limitée."
+  },
+  "swot": {
+    "atouts": [
+      {
+        "text": "Factures impayées de juin à août 2023 : 127 450 € TTC réclamés dans l'assignation",
+        "weight": "CRITIQUE",
+        "action": "Produire ces factures en annexe de l'assignation avec les relances et mises en demeure pour démontrer la mauvaise foi de CLINIQUE DU SUD.",
+        "sources": [
+          {
+            "pieceId": "01_ASSIGNATION_EN_JUSTICE"
+          },
+          {
+            "pieceId": "11_FACTURE_GENBIO_2023_0456_JUIN"
+          },
+          {
+            "pieceId": "12_FACTURE_GENBIO_2023_0498_JUILLET"
+          },
+          {
+            "pieceId": "13_FACTURE_GENBIO_2023_0512_AOUT"
+          }
+        ]
+      },
+      {
+        "text": "Logs GEN-TRACE : environ 1 247 flacons exportés vers Madrid, à l'appui de la revente alléguée",
+        "weight": "CRITIQUE",
+        "action": "Solliciter une expertise judiciaire pour authentifier les logs et établir le lien avec CLINIQUE DU SUD. Citer l'Art. L. 442-6 C.com. pour violation de la clause d'exclusivité.",
+        "sources": [
+          {
+            "pieceId": "09_LOGS_EXPORT_GENTRACE_2022_2023"
+          }
+        ]
+      },
+      {
+        "text": "Relation commerciale établie depuis 8 ans (2016-2023)",
+        "weight": "IMPORTANT",
+        "action": "Mettre en avant la durée et la stabilité de la relation pour renforcer l'application de l'Art. L. 442-1 II C.com. (rupture brutale).",
+        "sources": [
+          {
+            "pieceId": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315"
+          }
+        ]
+      },
+      {
+        "text": "Clause d'exclusivité territoriale (Art. 2 du contrat)",
+        "weight": "IMPORTANT",
+        "action": "Exploiter cette clause pour fonder la demande de dommages et intérêts pour violation de l'exclusivité (art. 8.3 du contrat).",
+        "sources": [
+          {
+            "pieceId": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315"
+          }
+        ]
+      },
+      {
+        "text": "Mise en demeure formelle du 12 juin 2023 non respectée",
+        "weight": "IMPORTANT",
+        "action": "Utiliser cette mise en demeure pour démontrer la tentative de résolution amiable et la mauvaise foi de CLINIQUE DU SUD.",
+        "sources": [
+          {
+            "pieceId": "07_MISE_EN_DEMEURE_GENBIO_20230612"
+          }
+        ]
+      },
+      {
+        "text": "Préavis contractuel de 6 mois non respecté (Art. 3 du contrat)",
+        "weight": "IMPORTANT",
+        "action": "Souligner le non-respect du préavis pour appuyer la demande d'indemnisation pour rupture brutale.",
+        "sources": [
+          {
+            "pieceId": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315"
+          }
+        ]
+      }
+    ],
+    "failles": [
+      {
+        "text": "Email interne (Pièce 21) révélant la connaissance préalable du bug GEN-6000",
+        "weight": "CRITIQUE",
+        "action": "Préparer une argumentation pour minimiser l'impact de cet email : démontrer que le bug était mineur, corrigé rapidement, et que CLINIQUE DU SUD n'a pas subi de préjudice significatif. Obtenir une expertise technique pour évaluer l'impact réel du bug.",
+        "sources": []
+      },
+      {
+        "text": "WhatsApp (Pièce 22) pouvant démontrer une préméditation de la rupture",
+        "weight": "CRITIQUE",
+        "action": "Contester l'authenticité ou le contexte de ce message. Préparer une contre-argumentation pour montrer que la rupture était justifiée par les manquements répétés de CLINIQUE DU SUD (impayés, revente illicite).",
+        "sources": []
+      },
+      {
+        "text": "Absence de preuves des signalements de dysfonctionnements du GEN-6000 par CLINIQUE DU SUD",
+        "weight": "IMPORTANT",
+        "action": "Obtenir les logs des tickets de support et les échanges écrits pour démontrer que les dysfonctionnements ont été signalés tardivement ou de manière insuffisante. Solliciter une expertise pour évaluer la gravité des dysfonctionnements.",
+        "sources": []
+      },
+      {
+        "text": "Risque de partialité des logs GEN-TRACE (preuve de la revente illicite)",
+        "weight": "IMPORTANT",
+        "action": "Demander une expertise judiciaire pour authentifier les logs et établir un lien direct avec CLINIQUE DU SUD. Produire des témoignages des employés impliqués dans la revente.",
+        "sources": []
+      },
+      {
+        "text": "Coûts et délais procéduraux élevés en cas de procédure longue",
+        "weight": "MINEUR",
+        "action": "Évaluer la possibilité d'un règlement amiable partiel pour les factures impayées afin de réduire les coûts et délais.",
+        "sources": []
+      }
+    ],
+    "menaces": [
+      {
+        "text": "Reconvention de CLINIQUE DU SUD pour défaut de conformité du GEN-6000 (850 000 €)",
+        "weight": "CRITIQUE",
+        "action": "Préparer une défense solide en produisant les preuves des corrections apportées au GEN-6000 et en minimisant l'impact des dysfonctionnements. Solliciter une expertise technique pour évaluer le préjudice réel.",
+        "sources": []
+      },
+      {
+        "text": "Jurisprudence défavorable sur la rupture brutale (ex. : préavis réduit pour relations instables)",
+        "weight": "IMPORTANT",
+        "action": "Mettre en avant la stabilité et la durée de la relation commerciale pour contrer cet argument. Citer des précédents favorables (ex. : Cass. Com., 6 juillet 2021, n° 19-20.523).",
+        "sources": []
+      },
+      {
+        "text": "Production par CLINIQUE DU SUD de témoignages d'employés ou de clients sur les dysfonctionnements du GEN-6000",
+        "weight": "IMPORTANT",
+        "action": "Identifier et préparer des contre-témoignages d'experts ou de clients satisfaits. Solliciter une expertise judiciaire pour évaluer la gravité des dysfonctionnements.",
+        "sources": []
+      },
+      {
+        "text": "Risque de prescription pour certaines factures impayées",
+        "weight": "MINEUR",
+        "action": "Vérifier les délais de prescription pour chaque facture et produire les preuves des relances pour interrompre la prescription.",
+        "sources": []
+      },
+      {
+        "text": "Risque réputationnel pour GEN-BIO en cas de médiatisation du litige",
+        "weight": "MINEUR",
+        "action": "Préparer une communication de crise pour limiter l'impact médiatique. Mettre en avant les efforts de GEN-BIO pour résoudre les dysfonctionnements du GEN-6000.",
+        "sources": []
+      }
+    ],
+    "opportunites": [
+      {
+        "text": "Obtenir les pièces manquantes (Pièces 21 et 22) pour évaluer leur impact réel",
+        "weight": "CRITIQUE",
+        "action": "",
+        "sources": []
+      },
+      {
+        "text": "Solliciter une expertise judiciaire pour authentifier les logs GEN-TRACE et évaluer les dysfonctionnements du GEN-6000",
+        "weight": "CRITIQUE",
+        "action": "",
+        "sources": []
+      },
+      {
+        "text": "Produire les preuves des signalements tardifs ou insuffisants des dysfonctionnements par CLINIQUE DU SUD",
+        "weight": "IMPORTANT",
+        "action": "",
+        "sources": []
+      },
+      {
+        "text": "Négocier un règlement amiable partiel pour les factures impayées (127 450 € TTC)",
+        "weight": "IMPORTANT",
+        "action": "",
+        "sources": []
+      },
+      {
+        "text": "Exploiter les faiblesses de CLINIQUE DU SUD (difficultés financières, retards de paiement) pour obtenir un avantage en négociation",
+        "weight": "IMPORTANT",
+        "action": "",
+        "sources": []
+      },
+      {
+        "text": "Demander une ordonnance de référé pour obtenir des mesures conservatoires (ex. : gel des comptes de CLINIQUE DU SUD)",
+        "weight": "MINEUR",
+        "action": "",
+        "sources": []
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "date": "2018-03-15",
+      "title": "Signature du contrat-cadre de distribution GENBIO-CDS-2018-0347",
+      "category": "FAIT",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315"
+        }
+      ]
+    },
+    {
+      "date": "2023-02-18",
+      "title": "Premier ticket de support : panne de l'analyseur GEN-6000",
+      "category": "FAIT",
+      "importance": "IMPORTANT",
+      "sources": [
+        {
+          "pieceId": "14_TICKET_SUPPORT_CDS_GEN6000_PANNE_20230218"
+        }
+      ]
+    },
+    {
+      "date": "2023-02-25",
+      "title": "Première lettre de demande de réparation (CLINIQUE DU SUD)",
+      "category": "FAIT",
+      "importance": "IMPORTANT",
+      "sources": [
+        {
+          "pieceId": "16_DEMANDE_REPARATION_CDS_20230225_LETTER"
+        }
+      ]
+    },
+    {
+      "date": "2023-03-08",
+      "title": "Livraison des réactifs et kits (facture 2023-0345)",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "02_FACTURE_GENBIO_2023_0345_MARS"
+        }
+      ]
+    },
+    {
+      "date": "2023-03-15",
+      "title": "Émission de la facture 2023-0345",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "02_FACTURE_GENBIO_2023_0345_MARS"
+        }
+      ]
+    },
+    {
+      "date": "2023-03-20",
+      "title": "Deuxième lettre de demande de réparation (CLINIQUE DU SUD)",
+      "category": "FAIT",
+      "importance": "IMPORTANT",
+      "sources": [
+        {
+          "pieceId": "17_DEMANDE_REPARATION_CDS_20230320_LETTER"
+        }
+      ]
+    },
+    {
+      "date": "2023-04-14",
+      "title": "Date d'exigibilité de la facture 2023-0345",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "02_FACTURE_GENBIO_2023_0345_MARS"
+        }
+      ]
+    },
+    {
+      "date": "2023-04-22",
+      "title": "Émission de la facture 2023-0389",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "03_FACTURE_GENBIO_2023_0389_AVRIL"
+        }
+      ]
+    },
+    {
+      "date": "2023-05-18",
+      "title": "Émission de la facture 2023-0412",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "04_FACTURE_GENBIO_2023_0412_MAI"
+        }
+      ]
+    },
+    {
+      "date": "2023-05-22",
+      "title": "Date d'exigibilité de la facture 2023-0389",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "03_FACTURE_GENBIO_2023_0389_AVRIL"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-12",
+      "title": "Mise en demeure formelle de GEN-BIO",
+      "category": "DEPOT",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "07_MISE_EN_DEMEURE_GENBIO_20230612"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-17",
+      "title": "Date d'exigibilité de la facture 2023-0412",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "04_FACTURE_GENBIO_2023_0412_MAI"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-20",
+      "title": "Émission de la facture 2023-0456",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "11_FACTURE_GENBIO_2023_0456_JUIN"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-25",
+      "title": "Réponse de CLINIQUE DU SUD à la mise en demeure",
+      "category": "DEPOT",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "08_REPONSE_CDS_MISE_EN_DEMEURE_20230625"
+        }
+      ]
+    },
+    {
+      "date": "2023-06-27",
+      "title": "Échéance de la mise en demeure",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "07_MISE_EN_DEMEURE_GENBIO_20230612"
+        }
+      ]
+    },
+    {
+      "date": "2023-07-15",
+      "title": "Premier règlement proposé par CLINIQUE DU SUD (échéancier)",
+      "category": "ECHEANCE",
+      "importance": "IMPORTANT",
+      "sources": [
+        {
+          "pieceId": "08_REPONSE_CDS_MISE_EN_DEMEURE_20230625"
+        }
+      ]
+    },
+    {
+      "date": "2023-07-20",
+      "title": "Date d'exigibilité de la facture 2023-0456",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "11_FACTURE_GENBIO_2023_0456_JUIN"
+        }
+      ]
+    },
+    {
+      "date": "2023-07-25",
+      "title": "Émission de la facture 2023-0498",
+      "category": "FAIT",
+      "importance": "INFORMATIF",
+      "sources": [
+        {
+          "pieceId": "12_FACTURE_GENBIO_2023_0498_JUILLET"
+        }
+      ]
+    },
+    {
+      "date": "2023-08-02",
+      "title": "Note interne d'audit GEN-BIO sur les connexions depuis Madrid",
+      "category": "FAIT",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802"
+        }
+      ]
+    },
+    {
+      "date": "2023-08-14",
+      "title": "Résiliation immédiate du contrat par GEN-BIO",
+      "category": "FAIT",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "10_NOTIFICATION_RESILIATION_GENBIO_20230814"
+        }
+      ]
+    },
+    {
+      "date": "2023-08-24",
+      "title": "Date d'exigibilité de la facture 2023-0498",
+      "category": "ECHEANCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "12_FACTURE_GENBIO_2023_0498_JUILLET"
+        }
+      ]
+    },
+    {
+      "date": "2024-01-15",
+      "title": "Audience fixée par l'assignation devant le Tribunal judiciaire de Paris",
+      "category": "AUDIENCE",
+      "importance": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "01_ASSIGNATION_EN_JUSTICE"
+        }
+      ]
+    }
+  ],
+  "deadlines": [
+    {
+      "description": "Délai de paiement des factures (pénalités de retard)",
+      "dueDate": "2023-04-14",
+      "basis": "Conditions générales de facturation (30 jours date de facture)",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "02_FACTURE_GENBIO_2023_0345_MARS"
+        }
+      ]
+    },
+    {
+      "description": "Délai de paiement de la facture n°2023-0389 (avril 2023)",
+      "dueDate": "2023-05-22",
+      "basis": "Conditions générales de facturation (30 jours date de facture)",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "03_FACTURE_GENBIO_2023_0389_AVRIL"
+        }
+      ]
+    },
+    {
+      "description": "Délai de paiement de la facture n°2023-0412 (mai 2023)",
+      "dueDate": "2023-06-17",
+      "basis": "Conditions générales de facturation (30 jours date de facture)",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "04_FACTURE_GENBIO_2023_0412_MAI"
+        }
+      ]
+    },
+    {
+      "description": "Délai de réponse à la mise en demeure du 12 juin 2023",
+      "dueDate": "2023-06-27",
+      "basis": "Mise en demeure du 12 juin 2023 : délai de 15 jours à compter de la réception",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "07_MISE_EN_DEMEURE_GENBIO_20230612"
+        }
+      ]
+    },
+    {
+      "description": "Délai de paiement de la facture n°2023-0456 (juin 2023)",
+      "dueDate": "2023-07-20",
+      "basis": "Conditions générales de facturation (30 jours date de facture)",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "11_FACTURE_GENBIO_2023_0456_JUIN"
+        }
+      ]
+    },
+    {
+      "description": "Délai de paiement de la facture n°2023-0498 (juillet 2023)",
+      "dueDate": "2023-08-24",
+      "basis": "Conditions générales de facturation (30 jours date de facture)",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "12_FACTURE_GENBIO_2023_0498_JUILLET"
+        }
+      ]
+    },
+    {
+      "description": "Délai de préavis pour dénonciation du contrat (renouvellement tacite)",
+      "dueDate": "2023-09-15",
+      "basis": "Article 3 du Contrat GENBIO-CDS-2018-0347",
+      "urgency": "CRITIQUE",
+      "sources": [
+        {
+          "pieceId": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315"
+        }
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "01_ASSIGNATION_EN_JUSTICE",
+      "title": "ASSIGNATION EN JUSTICE",
+      "date": null,
+      "text": "# ASSIGNATION EN JUSTICE\r\n## SAS GEN-BIO c/ CLINIQUE DU SUD\r\n\r\n**Tribunal Judiciaire de Paris**\r\n**Affaire n° 2024/08471**\r\n\r\n---\r\n\r\n**AU TRIBUNAL JUDICIAIRE DE PARIS**\r\n\r\n**DÉPARTEMENT DE LA SELARL SELAS & ASSOCIÉS**\r\nAvocats aux Barreaux de Paris\r\n14, rue de la Paix – 75002 PARIS\r\nTél. : 01 42 60 00 00 – Fax : 01 42 60 00 01\r\nEmail : cabinet@selas-associes.fr\r\n\r\n---\r\n\r\n**ASSIGNATION EN RÉFÉRÉ ET AU FOND**\r\n\r\nÀ l'audience du **15 janvier 2024**, à **9 heures 30**, au Palais de Justice de Paris, 4, boulevard du Palais, 75001 Paris, salle n° 12, 1er étage, aile sud.\r\n\r\n**LE GREFFIER DU TRIBUNAL JUDICIAIRE DE PARIS**\r\n\r\nNous, SELARL SELAS & ASSOCIÉS, avocat aux Barreaux de Paris, agissant au nom et pour le compte de la société **SAS GEN-BIO**, société par actions simplifiée au capital de 2 500 000 €, immatriculée au Registre du Commerce et des Sociétés de Lyon sous le numéro 789 456 123, dont le siège social est situé 45, avenue Tony Garnier, 69007 LYON, représentée par Monsieur **Pierre DURAND**, en sa qualité de Président,\r\n\r\n**AVONS ASSIGNÉ ET ASSIGNONS :**\r\n\r\nLa société **CLINIQUE DU SUD**, société par actions simplifiée au capital de 850 000 €, immatriculée au Registre du Commerce et des Sociétés de Marseille sous le numéro 456 789 012, dont le siège social est situé 128, avenue du Prado, 13008 MARSEILLE, représentée par Madame **Isabelle MOREAU**, en sa qualité de Directrice Générale,\r\n\r\n**À COMPARAÎTRE, en personne ou représentée et assistée d'un avocat au choix, à l'audience susvisée, pour voir :**\r\n\r\n---\r\n\r\n### I. – SUR LES FAITS\r\n\r\n**A. – D'une relation commerciale de huit ans**\r\n\r\nDepuis le **15 mars 2016**, date de signature d'un contrat-cadre de distribution (ci-après « le Contrat »), la société GEN-BIO, spécialisée dans la fourniture d'équipements de laboratoire haut de gamme et de réactifs propriétaires destinés à la recherche biomédicale, a noué avec la société CLINIQUE DU SUD, groupe de cliniques privées opérant dans le Sud-Est de la France, une relation commerciale stable, continue et de bonne foi.\r\n\r\nAux termes du Contrat (Pièce n°1), GEN-BIO s'engageait à fournir à CLINIQUE DU SUD :\r\n- Des analyseurs automatiques de dernière génération (modèles GEN-4000 et GEN-6000) ;\r\n- Des réactifs exclusifs, protégés par brevets européens (brevet EP 2 847 361 B1) ;\r\n- Un service de maintenance technique préventive et curative ;\r\n- Une formation continue des techniciens de laboratoire.\r\n\r\nEn contrepartie, CLINIQUE DU SUD s'engageait à :\r\n- Acquérir exclusivement auprès de GEN-BIO l'ensemble des réactifs compatibles avec les équipements fournis (clause d'exclusivité, article 7 du Contrat) ;\r\n- Effectuer ses paiements dans un délai de 30 jours à compter de la date d'émission des factures ;\r\n- Ne pas revendre, céder, transférer ou exporter les réactifs vers un tiers sans l'accord écrit préalable de GEN-BIO (article 8.3 du Contrat).\r\n\r\n**B. – D'une dégradation progressive des relations**\r\n\r\nÀ compter du **1er trimestre 2023**, la société CLINIQUE DU SUD a commencé à accuser des retards de paiement récurrents. Les factures des mois de mars, avril et mai 2023 (Pièces n°2, n°3 et n°4) n'ont été réglées qu'avec des délais dépassant systématiquement 60 à 90 jours, malgré les relances répétées du service comptable de GEN-BIO (Pièces n°5 et n°6).\r\n\r\nLe **12 juin 2023**, Monsieur Pierre DURAND, Président de GEN-BIO, a adressé à Madame Isabelle MOREAU une lettre de mise en demeure formelle (Pièce n°7), l'informant que ces retards de paiement constituaient une violation substantielle du Contrat et l'invitant à régulariser sa situation dans un délai de 15 jours, sous peine de résiliation.\r\n\r\nMadame MOREAU a répondu le **25 juin 2023** (Pièce n°8) en invoquant des « difficultés de trésorerie temporaires » et en proposant un échelonnement des dettes. Cette proposition a été rejetée par GEN-BIO, qui a rappelé l'importance du respect strict des délais de paiement dans un secteur aussi réglementé.\r\n\r\n**C. – De la découverte d'une infraction grave : la revente occulte en Espagne**\r\n\r\nLe **3 août 2023**, le service de conformité de GEN-BIO a découvert, lors d'un audit de routine des logs d'accès au système de traçabilité des réactifs (système GEN-TRACE), que des connexions anormales étaient effectuées depuis une adresse IP localisée à **Madrid, Espagne** (adresse IP 185.45.72.188), associée à une entité tierce non identifiée dans le Contrat.\r\n\r\nL'analyse approfondie des données d'exportation (Pièce n°9) a révélé que, sur une période de 18 mois (de février 2022 à juillet 2023), la société CLINIQUE DU SUD avait procédé à l'exportation irrégulière et occulte de **1 247 flacons de réactifs propriétaires GEN-BIO**, pour une valeur estimée de **380 000 € hors taxes**, vers un distributeur espagnol non agréé, la société « LABORATORIOS IBERIA SL », basée à Madrid.\r\n\r\nCes exportaciones constituaient une violation flagrante :\r\n- De l'article 8.3 du Contrat (interdiction de revente sans autorisation) ;\r\n- De l'article L. 441-3 du Code de commerce (rupture de la bonne foi contractuelle) ;\r\n- Des obligations de traçabilité imposées par la réglementation européenne sur les dispositifs médicaux de diagnostic in vitro (Règlement (UE) 2017/746).\r\n\r\n**D. – De la rupture brutale des relations commerciales**\r\n\r\nConfrontée à ces éléments le **10 août 2023**, Madame Isabelle MOREAU a refusé de fournir des explications satisfaisantes, se contentant d'évoquer des « erreurs administratives » et de nier toute intention frauduleuse.\r\n\r\nFace à cette situation intenable, et considérant que la confiance réciproque était irrémédiablement rompue, Monsieur Pierre DURAND a décidé, le **14 août 2023 à 18h30**, de suspendre immédiatement l'accès de CLINIQUE DU SUD au portail de commandes en ligne GEN-BIO, de bloquer les expéditions en cours et de notifier par courrier électronique (Pièce n°10) la résiliation immédiate du Contrat, invoquant l'article 12.2 (clause de résiliation de plein droit pour manquement grave à l'exclusivité).\r\n\r\n**E. – Des conséquences dramatiques pour GEN-BIO**\r\n\r\nLa rupture brutale de cette relation de huit ans a entraîné pour GEN-BIO des préjudices considérables :\r\n\r\n1. **Préjudice commercial direct** : perte du chiffre d'affaires annuel récurrent de 480 000 €, sur la base des trois dernières années (moyenne 2021-2023) ;\r\n2. **Préjudice d'image** : la réputation de GEN-BIO auprès de ses autres distributeurs et partenaires institutionnels a été ternie par les rumeurs de « conflit commercial » diffusées par CLINIQUE DU SUD ;\r\n3. **Préjudice financier** : impayés restant dus s'élevant à **127 450 € TTC** (factures des mois de juin, juillet et août 2023 – Pièces n°11, n°12 et n°13) ;\r\n4. **Préjudice lié à la dépréciation des stocks** : GEN-BIO s'était engagée dans une politique de stockage anticipé pour répondre aux besoins croissants de CLINIQUE DU SUD, engageant des coûts de stockage et d'immobilisation financière évalués à **45 000 €** ;\r\n5. **Frais de reprise et de reconditionnement** : coûts liés au rappel des équipements en cours de maintenance et à la réinitialisation des licences logicielles, évalués à **18 500 €**.\r\n\r\n---\r\n\r\n### II. – SUR LE DROIT\r\n\r\n**A. – Fondement juridique de la demande**\r\n\r\nLa demande de la société GEN-BIO repose sur les textes suivants :\r\n\r\n**Article L. 442-1, II, du Code de commerce :**\r\n> « Le fait, pour un producteur, un commerçant, un artisan ou une personne immatriculée au répertoire des métiers, de rompre brutalement, même partiellement, une relation commerciale établie, alors que la durée de cette relation est supérieure à deux ans et que le volume d'affaires qui en résulte est significatif par rapport à l'activité de la partie lésée ou de la partie responsable de la rupture, sans préavis écrit tenant compte notamment de la durée de la relation commerciale et rédigé dans des termes qui ne laissent pas de doute sur la volonté de rompre, constitue une pratique commerciale déloyale. »\r\n\r\n**Article 1231-1 du Code civil (ancien article 1147) :**\r\nObligation de réparer le dommage causé par l'inexécution d'une obligation contractuelle.\r\n\r\n**Article 1134 du Code civil :**\r\nLes conventions légalement formées tiennent lieu de loi à ceux qui les ont faites.\r\n\r\n**Article L. 441-3 du Code de commerce :**\r\nObligation de bonne foi dans l'exécution des contrats commerciaux.\r\n\r\n**B. – Analyse juridique**\r\n\r\n**1. Sur la qualification de rupture brutale**\r\n\r\nLa relation entre GEN-BIO et CLINIQUE DU SUD remontait à mars 2016, soit une durée de **plus de huit ans**, largement supérieure au seuil des deux ans requis par l'article L. 442-1, II du Code de commerce.\r\n\r\nLe volume d'affaires annuel moyen de 480 000 € représentait environ **18,5 % du chiffre d'affaires total de GEN-BIO**, ce qui caractérise indéniablement un volume « significatif » au sens de la disposition précitée.\r\n\r\nLa rupture opérée le 14 août 2023 était « brutale » au sens juridique du terme : aucun préavis écrit n'a été respecté. Bien que GEN-BIO ait invoqué la clause de résiliation de plein droit (article 12.2 du Contrat), cette clause ne peut prévaloir sur l'ordre public protecteur de l'article L. 442-1, II, qui impose un préavis écrit proportionné à la durée de la relation.\r\n\r\n**2. Sur l'absence de préavis**\r\n\r\nConformément à la jurisprudence constante de la Cour de cassation (Cass. com., 12 janvier 2021, n° 19-13.583 ; Cass. com., 5 juillet 2022, n° 21-16.012), le préavis doit :\r\n- Être écrit ;\r\n- Tenir compte de la durée de la relation ;\r\n- Être rédigé dans des termes ne laissant pas de doute sur la volonté de rompre ;\r\n- Laisser au cocontractant le temps nécessaire pour s'organiser.\r\n\r\nDans la présente espèce, aucun préavis n'a été respecté. La notification du 14 août 2023 était immédiate et effective dès réception, privant CLINIQUE DU SUD de toute possibilité d'anticipation. Cette absence de préavis constitue une rupture brutale au sens de l'article L. 442-1, II.\r\n\r\n**3. Sur la responsabilité de GEN-BIO malgré le manquement de CLINIQUE DU SUD**\r\n\r\nIl est vrai que CLINIQUE DU SUD a commis des manquements graves :\r\n- Retards de paiement récurrents ;\r\n- Revente occulte des réactifs en violation de l'exclusivité ;\r\n- Manquement à l'obligation de bonne foi.\r\n\r\nToutefois, aux termes de l'article L. 442-1, II, alinéa 2 : « Le préavis ne peut être inférieur à six mois lorsque la durée de la relation commerciale est supérieure à cinq ans. »\r\n\r\nLa Cour de cassation a précisé que ce délai est impératif et que la partie qui rompt ne peut s'exonérer de son obligation de préavis en invoquant les manquements de son cocontractant, sauf à démontrer l'existence d'une faute d'une exceptionnelle gravité rendant impossible la poursuite de la relation (Cass. com., 10 novembre 2020, n° 19-11.234).\r\n\r\nOr, si la revente occulte était répréhensible, elle ne constituait pas une faute d'une « exceptionnelle gravité » justifiant une rupture immédiate. GEN-BIO disposait d'autres voies de droit (mise en demeure, résiliation amiable, action en responsabilité) pour faire cesser le manquement sans violer l'ordre public protecteur du préavis.\r\n\r\n**4. Sur le caractère abusif de la clause limitative de responsabilité**\r\n\r\nL'article 10 du Contrat limite la responsabilité de GEN-BIO à **100 000 €**. Cette clause est inopposable à CLINIQUE DU SUD dans le cadre de la présente action, car :\r\n- Elle vise à limiter la responsabilité de GEN-BIO, non celle de CLINIQUE DU SUD ;\r\n- Son caractère abusif pourrait être discuté au regard de l'article L. 442-6, I, 2° du Code de commerce ;\r\n- Elle ne saurait limiter le droit de CLINIQUE DU SUD d'obtenir réparation intégrale du préjudice subi du fait d'une rupture brutale.\r\n\r\n---\r\n\r\n### III. – PRÉTENTIONS\r\n\r\nPar ces motifs, et en l'état de ce qui a été dit et produit, la société GEN-BIO sollicite du Tribunal qu'il :\r\n\r\n**1.** Dîmes et qualifie la rupture opérée le 14 août 2023 comme une rupture brutale des relations commerciales au sens de l'article L. 442-1, II du Code de commerce ;\r\n\r\n**2.** Condamne la société CLINIQUE DU SUD à lui payer la somme de **1 200 000 € (UN MILLION DEUX CENT MILLE EUROS)** à titre de dommages et intérêts pour rupture brutale, se décomposant comme suit :\r\n- 960 000 € au titre de la perte de chiffre d'affaires sur deux ans (480 000 € x 2) ;\r\n- 127 450 € au titre des factures impayées ;\r\n- 45 000 € au titre des coûts de stockage et d'immobilisation ;\r\n- 18 500 € au titre des frais de reprise et reconditionnement ;\r\n- 49 050 € au titre du préjudice d'image et trouble commercial ;\r\n\r\n**3.** Condamne la société CLINIQUE DU SUD à lui payer une somme supplémentaire de **380 000 €** au titre de la revente illicite des réactifs, correspondant à la valeur des produits détournés ;\r\n\r\n**4.** Condamne la société CLINIQUE DU SUD aux intérêts moratoires au taux légal majoré de 5 points sur l'ensemble des sommes dues, à compter du 15 août 2023 ;\r\n\r\n**5.** Condamne la société CLINIQUE DU SUD à lui payer une indemnité forfaitaire pour frais de recouvrement de 40 000 €, conformément à l'article L. 441-6 du Code de commerce ;\r\n\r\n**6.** Dîme que la clause limitative de responsabilité de l'article 10 du Contrat est inopposable et/ou nulle ;\r\n\r\n**7.** Condamne la société CLINIQUE DU SUD à payer une astreinte de 5 000 € par jour de retard dans l'exécution du jugement ;\r\n\r\n**8.** Condamne la société CLINIQUE DU SUD à lui payer la somme de 25 000 € au titre de l'article 700 du Code de procédure civile ;\r\n\r\n**9.** Condamne la société CLINIQUE DU SUD aux entiers dépens.\r\n\r\n**Le cas échéant, nous réservons le droit de modifier ou compléter nos conclusions et demandes avant l'audience, conformément aux dispositions de l'article 763 du Code de procédure civile.**\r\n\r\n---\r\n\r\nFait à Paris, le 15 novembre 2023\r\n\r\n**L'Avocat**\r\n\r\n[Signature et paraphe]\r\n\r\n*Maître Jean-Pierre LEFEBVRE*\r\n*Avocat aux Barreaux de Paris*"
+    },
+    {
+      "id": "01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315",
+      "title": "CONTRAT CADRE DE DISTRIBUTION",
+      "date": "2018-03-15",
+      "text": "# CONTRAT CADRE DE DISTRIBUTION\r\n## Contrat n° GENBIO-CDS-2018-0347\r\n\r\n**Entre les soussignés :**\r\n\r\nLa société **SAS GEN-BIO**, société par actions simplifiée au capital de 2 500 000 €, immatriculée au RCS de Lyon sous le n° 789 456 123, dont le siège social est situé 45, avenue Tony Garnier, 69007 LYON, représentée par Monsieur Pierre DURAND, Président, ci-après dénommée **« le Fournisseur »**,\r\n\r\n**D'UNE PART,**\r\n\r\nEt\r\n\r\nLa société **CLINIQUE DU SUD**, société par actions simplifiée au capital de 850 000 €, immatriculée au RCS de Marseille sous le n° 456 789 012, dont le siège social est situé 128, avenue du Prado, 13008 MARSEILLE, représentée par Madame Isabelle MOREAU, Directrice Générale, ci-après dénommée **« le Distributeur »**,\r\n\r\n**D'AUTRE PART,**\r\n\r\nIl a été convenu ce qui suit :\r\n\r\n---\r\n\r\n### ARTICLE 1 – OBJET\r\n\r\nLe présent contrat a pour objet de définir les conditions dans lesquelles le Fournisseur confie au Distributeur, qui accepte, la distribution exclusive sur le territoire défini à l'article 2 des équipements de laboratoire et réactifs biomédicaux décrits en annexe A (ci-après « les Produits »).\r\n\r\n---\r\n\r\n### ARTICLE 2 – TERRITOIRE\r\n\r\nLe présent contrat s'applique au territoire de la France métropolitaine, dans la zone géographique correspondant aux départements des Bouches-du-Rhône (13), du Var (83), des Alpes-Maritimes (06) et du Vaucluse (84).\r\n\r\nToute extension du territoire devra faire l'objet d'un avenant écrit signé par les deux parties.\r\n\r\n---\r\n\r\n### ARTICLE 3 – DURÉE\r\n\r\nLe présent contrat est conclu pour une durée initiale de trois (3) ans à compter de sa date de signature. Il se renouvellera tacitement par périodes successives d'un (1) an, sauf dénonciation par l'une ou l'autre des parties moyennant un préavis écrit de six (6) mois adresser par lettre recommandée avec accusé de réception.\r\n\r\n---\r\n\r\n### ARTICLE 4 – OBLIGATIONS DU FOURNISSEUR\r\n\r\n4.1. Le Fournisseur s'engage à fournir les Produits dans les délais convenus et conformément aux spécifications techniques définies en annexe B.\r\n\r\n4.2. Le Fournisseur assure la maintenance préventive et curative des équipements selon les modalités définies en annexe C.\r\n\r\n4.3. Le Fournisseur s'engage à former le personnel technique du Distributeur, à raison de deux (2) sessions annuelles de cinq (5) jours chacune.\r\n\r\n---\r\n\r\n### ARTICLE 5 – OBLIGATIONS DU DISTRIBUTEUR\r\n\r\n5.1. Le Distributeur s'engage à commercialiser les Produits de bonne foi et conformément aux directives marketing du Fournisseur.\r\n\r\n5.2. Le Distributeur s'engage à maintenir un stock minimum de réactifs évalué à trois (3) mois de consommation moyenne.\r\n\r\n5.3. Le Distributeur s'engage à rémunérer le Fournisseur dans les conditions et délais définis à l'article 6.\r\n\r\n5.4. Le Distributeur s'engage à ne pas modifier, altérer, décompiler ou procéder à une ingénierie inverse des Produits.\r\n\r\n---\r\n\r\n### ARTICLE 6 – CONDITIONS FINANCIÈRES\r\n\r\n6.1. Les prix des Produits sont ceux en vigueur au jour de la commande, tels que définis dans la grille tarifaire annexée au présent contrat (annexe D), révisable annuellement selon l'indice SYNTEC.\r\n\r\n6.2. Les factures sont payables à trente (30) jours date de facture, sans escompte. Tout retard de paiement thérapeut de plein droit l'application d'une pénalité de retard égale à trois (3) fois le taux d'intérêt légal, ainsi qu'une indemnité forfaitaire de recouvrement de quarante (40) euros par facture impayée, conformément aux articles L. 441-6 et L. 441-10 du Code de commerce.\r\n\r\n6.3. En cas de retard de paiement supérieur à soixante (60) jours, le Fournisseur se réserve le droit de suspendre toute nouvelle livraison jusqu'à complet règlement des sommes dues.\r\n\r\n---\r\n\r\n### ARTICLE 7 – CLAUSE D'EXCLUSIVITÉ\r\n\r\n7.1. Le Distributeur s'engage à ne pas distribuer, commercialiser, promouvoir ou vendre des produits concurrents aux Produits du Fournisseur sur le territoire défini à l'article 2.\r\n\r\n7.2. Cette exclusivité est réciproque : le Fournisseur s'engage à ne pas désigner d'autre distributeur sur le territoire couvert par le présent contrat.\r\n\r\n---\r\n\r\n### ARTICLE 8 – PROPRIÉTÉ INTELLECTUELLE ET CONFIDENTIALITÉ\r\n\r\n8.1. L'ensemble des brevets, marques, logiciels et savoir-faire attachés aux Produits restent la propriété exclusive du Fournisseur.\r\n\r\n8.2. Le Distributeur s'engage à ne pas divulguer à des tiers les informations confidentielles relatives aux Produits, notamment les formulations des réactifs et les protocoles d'analyse.\r\n\r\n**8.3. Le Distributeur s'interdit expressément de revendre, céder, transférer, exporter ou mettre à disposition des tiers, à titre gratuit ou onéreux, les Produits en dehors du territoire défini à l'article 2, sans l'accord écrit préalable du Fournisseur. Toute violation de cette clause constituera un manquement grave justifiant la résiliation de plein droit du présent contrat, conformément à l'article 12.2.**\r\n\r\n---\r\n\r\n### ARTICLE 9 – RESPONSABILITÉ\r\n\r\n9.1. Chaque partie est responsable des dommages directs et prévisibles causés à l'autre partie du fait de l'inexécution ou de la mauvaise exécution de ses obligations contractuelles.\r\n\r\n**9.2. CLAUSE LIMITATIVE DE RESPONSABILITÉ : La responsabilité totale et cumulative du Fournisseur, quelle que soit la nature de l'action (contractuelle, délictuelle ou autre), ne pourra excéder la somme de CENT MILLE EUROS (100 000 €) pour l'ensemble des réclamations survenues au cours d'une même année civile. Cette limitation ne s'applique pas en cas de faute intentionnelle, de dol ou de fraude.**\r\n\r\n9.3. Le Fournisseur ne pourra être tenu responsable des dommages indirects, notamment perte de chiffre d'affaires, perte de clientèle, perte de données ou trouble commercial, sauf faute lourde et caractérisée.\r\n\r\n---\r\n\r\n### ARTICLE 10 – ASSURANCE\r\n\r\nChaque partie s'engage à souscription et maintenir en vigueur une assurance responsabilité civile professionnelle couvrant les risques liés à l'exécution du présent contrat, pour un montant minimum de 2 000 000 € par sinistre et par année d'assurance.\r\n\r\n---\r\n\r\n### ARTICLE 11 – RÉVISION ET CESSION\r\n\r\n11.1. Le présent contrat ne peut être modifié que par avenant écrit signé par les deux parties.\r\n\r\n11.2. Aucune des parties ne pourra céder le présent contrat à un tiers sans l'accord écrit préalable de l'autre partie.\r\n\r\n---\r\n\r\n### ARTICLE 12 – RÉSILIATION\r\n\r\n12.1. En cas de manquement par l'une des parties à l'une de ses obligations essentielles, l'autre partie pourra adresser une mise en demeure par lettre recommandée avec accusé de réception. Si le manquement n'est pas réparé dans un délai de trente (30) jours à compter de la réception de la mise en demeure, le contrat pourra être résilié de plein droit par l'envoi d'une notification écrite.\r\n\r\n**12.2. RÉSILIATION DE PLEIN DROIT : Nonobstant les dispositions de l'article 12.1, le Fournisseur pourra résilier le présent contrat de plein droit et avec effet immédiat, sans préavis ni indemnité, en cas de violation par le Distributeur de l'article 7 (exclusivité) ou de l'article 8.3 (interdiction de revente/exportation). Cette résiliation prendra effet dès notification écrite au Distributeur, sans qu'il soit nécessaire de respecter un quelconque délai de préavis.**\r\n\r\n---\r\n\r\n### ARTICLE 13 – LOI APPLICABLE ET JURIDICTION\r\n\r\nLe présent contrat est régi par le droit français. Tout litige relatif à son interprétation ou à son exécution sera soumis à la compétence exclusive des tribunaux de Paris, nonobstant pluralité de défendeurs ou appel en garantie.\r\n\r\n---\r\n\r\nFait à Lyon, le 15 mars 2018, en deux (2) exemplaires originaux.\r\n\r\n**Pour le Fournisseur :** **Pour le Distributeur :**\r\n*Pierre DURAND* *Isabelle MOREAU*"
+    },
+    {
+      "id": "02_CONCLUSIONS_EN_DEFENSE",
+      "title": "CONCLUSIONS EN DÉFENSE N°1",
+      "date": null,
+      "text": "# CONCLUSIONS EN DÉFENSE N°1\r\n## CLINIQUE DU SUD c/ SAS GEN-BIO\r\n\r\n**Tribunal Judiciaire de Paris**\r\n**Affaire n° 2024/08471**\r\n\r\n---\r\n\r\n**AU TRIBUNAL JUDICIAIRE DE PARIS**\r\n\r\n**SELARL MOREAU & PARTENAIRES**\r\nAvocats aux Barreaux de Marseille et de Paris\r\n22, rue de la République – 13001 MARSEILLE\r\nTél. : 04 91 00 00 00\r\n\r\n---\r\n\r\n**CONCLUSIONS EN DÉFENSE N° 1**\r\n\r\n**Défendeur :** Société CLINIQUE DU SUD\r\n**Demandeur :** SAS GEN-BIO\r\n\r\n---\r\n\r\n### I. – SUR L'EXCEPTION D'INEXÉCUTION\r\n\r\n**A. – Fondement juridique**\r\n\r\nAux termes de l'article 1217 du Code civil : « On peut se refuser à exécuter son obligation lorsque l'autre partie n'exécute pas la sienne, à moins que cette inexécution ne soit de peu d'importance. »\r\n\r\nLa Cour de cassation a précisé que l'exception d'inexécution constitue un moyen de défense opposable au créancier qui n'a pas exécuté ou qui a exécuté défectueusement son obligation, pour autant que le manquement invoqué soit suffisamment grave (Cass. civ. 1re, 3 juillet 2019, n° 18-13.002).\r\n\r\n**B. – Application aux faits de l'espèce**\r\n\r\nLa société CLINIQUE DU SUD sollicite du Tribunal qu'il constate que la société GEN-BIO a commis des manquements graves à ses obligations contractuelles, justifiant le refus de paiement et, subsidiairement, la résiliation du contrat.\r\n\r\n**1. Sur les retards de paiement**\r\n\r\nLes retards de paiement invoqués par GEN-BIO (factures de mars à mai 2023) sont le résultat direct d'un dysfonctionnement technique récurrent des analyseurs GEN-6000 livrés en janvier 2023.\r\n\r\nDès le mois de février 2023, le service technique de CLINIQUE DU SUD a signalé à GEN-BIO des pannes répétées affectant le module de calibration des analyseurs, entraînant des résultats d'analyse erronés et la mise en péril de la santé des patients (Pièces n°14 et n°15).\r\n\r\nCes dysfonctionnements ont contraint CLINIQUE DU SUD à :\r\n- Externaliser une partie de ses analyses vers des laboratoires tiers, engageant des coûts supplémentaires de 23 000 € ;\r\n- Reporter des interventions chirurgicales programmées, causant un préjudice financier et d'image évalué à 45 000 € ;\r\n- Mettre en œuvre des procédures de contrôle qualité renforcées, allongeant les délais de traitement.\r\n\r\nMalgré les demandes répétées de réparation (Pièces n°16, n°17 et n°18), GEN-BIO n'a procéder qu'à des interventions palliatives, sans résoudre le problème structurel. La garantie contractuelle (article 4.2 du Contrat) n'a donc pas été honorée.\r\n\r\nPar conséquent, les retards de paiement constituent une application légitime de l'exception d'inexécution : CLINIQUE DU SUD ne pouvait être tenue de payer intégralement des factures correspondant à des équipements défectueux et dangereux.\r\n\r\n**2. Sur la revente alléguée en Espagne**\r\n\r\nLa société GEN-BIO allègue que CLINIQUE DU SUD aurait procéder à la revente illicite de réactifs vers l'Espagne. Cette allégation est dénuée de fondement et constitue une tentative de diversion.\r\n\r\n**a) Sur les logs d'accès**\r\n\r\nLes connexions depuis l'adresse IP 185.45.72.188 (Madrid) ne prouvent pas une revente par CLINIQUE DU SUD. Il s'agissait d'accès légitimes effectués par le Dr. Antonio GARCIA, médecin collaborateur de CLINIQUE DU SUD, qui travaillait temporairement depuis Madrid dans le cadre d'un programme de recherche conjoint avec l'Université Complutense (Pièce n°19).\r\n\r\nLe Dr. GARCIA était habilité à accéder au système GEN-TRACE et ses connexions étaient connues et autorisées par le service informatique de GEN-BIO depuis le 12 janvier 2022 (Pièce n°20).\r\n\r\n**b) Sur les quantités alléguées**\r\n\r\nLa valeur de 380 000 € de réactifs « détournés » est fantaisiste. Les mouvements de stock correspondants s'expliquent par :\r\n- Des consommations internes accrues liées à l'ouverture d'un nouveau pôle d'analyses en juin 2022 ;\r\n- Des transferts internes entre les différents sites de CLINIQUE DU SUD (Marseille, Aix-en-Provence, Toulon), tous couverts par le Contrat ;\r\n- Des pertes et avaries déclarées conformément aux procédures qualité.\r\n\r\nAucun élément probant ne démontre une cession à la société « LABORATORIOS IBERIA SL ». GEN-BIO n'a produit aucun bon de livraison, aucune facture, aucun contrat de vente à l'appui de ses allégations.\r\n\r\n**c) Sur la bonne foi de CLINIQUE DU SUD**\r\n\r\nDès le 10 août 2023, date de la confrontation, Madame MOREAU a fourni des explications détaillées et documentées. La réaction brutale de GEN-BIO (coupure des accès le jour même) démontre une volonté préexistante de rompre la relation, indépendamment des allégations de revente.\r\n\r\n---\r\n\r\n### II. – SUR LA RUPTURE BRUTALE\r\n\r\n**A. – La rupture est effectivement brutale**\r\n\r\nLa société CLINIQUE DU SUD reconnaît que la rupture opérée le 14 août 2023 était brutale au sens de l'article L. 442-1, II du Code de commerce.\r\n\r\nToutefois, elle sollicite du Tribunal qu'il constate que cette rupture est imputable à GEN-BIO et que les manquements de cette dernière justifient une réduction substantielle, voire l'annulation, des dommages et intérêts réclamés.\r\n\r\n**B. – Les manquements de GEN-BIO**\r\n\r\n**1. Défaut de conformité technique**\r\n\r\nLes analyseurs GEN-6000 livrés en janvier 2023 présentaient un défaut de conception connu de GEN-BIO mais dissimulé au client.\r\n\r\nUn email interne du 5 décembre 2022, adressé par Monsieur Marc LEROY, Directeur Technique de GEN-BIO, à Monsieur Pierre DURAND, révèle que l'équipe technique était consciente d'un « bug critique dans le firmware v4.2.1 affectant la calibration des capteurs optiques » (Pièce n°21).\r\n\r\nCe bug entraînait des écarts de mesure pouvant atteindre 15 %, ce qui est inacceptable dans le domaine du diagnostic médical. Malgré cette connaissance, GEN-BIO a livré les équipements sans mise à jour corrective ni avertissement.\r\n\r\nCette dissimulation constitue une faute dolosive (article 1137 du Code civil) et un manquement grave à l'obligation de délivrance d'un bien conforme (article 1604 du Code civil).\r\n\r\n**2. Volonté préméditée de rupture**\r\n\r\nUn échange de messages WhatsApp entre Monsieur Pierre DURAND et Madame Sophie BERNARD, Directrice Commerciale de GEN-BIO, daté du 11 août 2023 à 22h14, révèle une volonté délibérée de rompre brutalement :\r\n\r\n> *« On coupe tout demain soir. Je veux plus entendre parler de cette clinique. Ils nous doivent 127k, ils râlent sur les machines, et en plus je suis sûr qu'ils revendent en Espagne. On verra ce qu'ils disent quand ils auront plus accès à rien. »*\r\n\r\n> *« Tu as prévenu le service juridique pour le préavis ? »*\r\n\r\n> *« Non, et je m'en fiche du préavis. La clause de résiliation de plein droit nous couvre. Ils ont violé l'exclusivité, c'est fini. Coupe leur accès ce soir. »* (Pièce n°22)\r\n\r\nCes échanges démontrent :\r\n- Une absence de volonté de respecter le préavis de six mois ;\r\n- Une instrumentalisation de l'allégation de revente pour justifier une rupture déjà décidée ;\r\n- Une mauvaise foi caractérisée du dirigeant de GEN-BIO.\r\n\r\n**3. Conséquences aggravées par la brutalité**\r\n\r\nLa rupture immédiate a plongé CLINIQUE DU SUD dans une situation de crise sanitaire :\r\n- Interruption des approvisionnements en réactifs essentiels ;\r\n- Impossibilité de réaliser les analyses biologiques de routine ;\r\n- Nécessité de recourir à des fournisseurs d'urgence à des prix majorés de 40 % ;\r\n- Perte de contrats avec des laboratoires externes ;\r\n- Dégradation de la réputation auprès des patients et des caisses d'assurance-maladie.\r\n\r\nLe préjudice subi par CLINIQUE DU SUD est évalué à **850 000 €**, se décomposant comme suit :\r\n- 320 000 € de surcoûts d'approvisionnement d'urgence ;\r\n- 180 000 € de perte de chiffre d'affaires ;\r\n- 150 000 € de préjudice d'image ;\r\n- 120 000 € de frais de remise en conformité des équipements ;\r\n- 80 000 € de perte de contrats externes.\r\n\r\n---\r\n\r\n### III. – SUR LA CLAUSE LIMITATIVE DE RESPONSABILITÉ\r\n\r\nLa société CLINIQUE DU SUD sollicite du Tribunal qu'il constate que la clause de l'article 9.2 du Contrat, limitant la responsabilité de GEN-BIO à 100 000 €, est nulle et inopposable au regard de l'article L. 442-6, I, 2° du Code de commerce.\r\n\r\nCette clause a été imposée unilatéralement par GEN-BIO, qui détient une position de force économique sur le marché des réactifs propriétaires. Elle prive CLINIQUE DU SUD de toute réparation effective en cas de faute grave, ce qui est contraire à l'ordre public de protection.\r\n\r\n---\r\n\r\n### IV. – PRÉTENTIONS EN DÉFENSE\r\n\r\nPar ces motifs, et en l'état de ce qui a été dit et produit, la société CLINIQUE DU SUD sollicite du Tribunal qu'il :\r\n\r\n**1.** Dîmes et constate que la société GEN-BIO a manqué gravement à ses obligations contractuelles (défaut de conformité, dissimulation de bug, rupture brutale préméditée) ;\r\n\r\n**2.** Dîmes que les retards de paiement invoqués par GEN-BIO sont justifiés par l'exception d'inexécution ;\r\n\r\n**3.** Rejette la demande de dommages et intérêts pour rupture brutale, ou à défaut, la réduit à un montant symbolique n'excédant pas 50 000 €, eu égard à la faute grave et caractérisée de GEN-BIO ;\r\n\r\n**4.** Condamne la société GEN-BIO à lui payer la somme de **850 000 €** au titre des préjudices subis du fait du défaut de conformité et de la rupture brutale ;\r\n\r\n**5.** Condamne la société GEN-BIO à lui payer la somme de **127 450 €** au titre des factures impayées, en déduction de la créance de GEN-BIO ;\r\n\r\n**6.** Dîme nulle et non avenue la clause limitative de responsabilité de l'article 9.2 du Contrat ;\r\n\r\n**7.** Condamne la société GEN-BIO à lui payer la somme de 25 000 € au titre de l'article 700 du Code de procédure civile ;\r\n\r\n**8.** Condamne la société GEN-BIO aux entiers dépens.\r\n\r\n**Le cas échéant, nous réservons le droit de modifier ou compléter nos conclusions et demandes.**\r\n\r\n---\r\n\r\nFait à Marseille, le 10 décembre 2023\r\n\r\n**L'Avocat**\r\n\r\n[Signature et paraphe]\r\n\r\n*Maître Sophie RICHARD*\r\n*Avocat aux Barreaux de Marseille et de Paris*"
+    },
+    {
+      "id": "02_FACTURE_GENBIO_2023_0345_MARS",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0345\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\nSIRET : 789 456 123 00015\r\nTVA intracommunautaire : FR 12 789 456 123\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0345**\r\n\r\n- Date d'émission : 15 mars 2023\r\n- Date d'exigibilité : 14 avril 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n128, avenue du Prado\r\n13008 MARSEILLE\r\nSIRET : 456 789 012 00022\r\n\r\n- Référence commande : CDS-CMD-2023-089\r\n- Date de livraison : 08 mars 2023\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Réactifs GEN-TRACE Pro (flacons 50ml) | 240 | 85,00 € | 20 400,00 € |\r\n| Kits de calibration GEN-6000 | 12 | 320,00 € | 3 840,00 € |\r\n| Tubes de prélèvements spécialisés | 500 | 4,50 € | 2 250,00 € |\r\n| Solutions de contrôle qualité | 24 | 180,00 € | 4 320,00 € |\r\n| Filtres de remplacement GEN-4000 | 48 | 45,00 € | 2 160,00 € |\r\n| | | **Sous-total** | **32 970,00 €** |\r\n| | | TVA 20% | 6 594,00 € |\r\n| | | **Total TTC** | **39 564,00 €** |\r\n\r\n---\r\n\r\n**Conditions de paiement :** Paiement à 30 jours date de facture\r\n**Pénalités de retard :** 3 fois le taux d'intérêt légal\r\n**Indemnité forfaitaire :** 40 € par facture impayée"
+    },
+    {
+      "id": "03_FACTURE_GENBIO_2023_0389_AVRIL",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0389\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\nSIRET : 789 456 123 00015\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0389**\r\n\r\n- Date d'émission : 22 avril 2023\r\n- Date d'exigibilité : 22 mai 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Analyseur GEN-6000 (n° série GB-6000-0447) | 1 | 32 000,00 € | 32 000,00 € |\r\n| Module de calibration supplémentaire | 1 | 4 500,00 € | 4 500,00 € |\r\n| Logiciel GEN-ANALYSE v4.2 (licence annuelle) | 1 | 2 000,00 € | 2 000,00 € |\r\n| | | **Sous-total** | **38 500,00 €** |\r\n| | | TVA 20% | 7 700,00 € |\r\n| | | **Total TTC** | **46 200,00 €** |\r\n\r\n---"
+    },
+    {
+      "id": "04_FACTURE_GENBIO_2023_0412_MAI",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0412\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0412**\r\n\r\n- Date d'émission : 18 mai 2023\r\n- Date d'exigibilité : 17 juin 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Réactifs GEN-TRACE Ultra (flacons 100ml) | 180 | 125,00 € | 22 500,00 € |\r\n| Kits de validation quotidienne | 60 | 85,00 € | 5 100,00 € |\r\n| Solutions de réactifs de sauvegarde | 120 | 65,00 € | 7 800,00 € |\r\n| Accessoires de maintenance GEN-6000 | 24 | 150,00 € | 3 600,00 € |\r\n| Formation supplémentaires (jours) | 3 | 450,00 € | 1 350,00 € |\r\n| | | **Sous-total** | **40 350,00 €** |\r\n| | | TVA 20% | 8 070,00 € |\r\n| | | **Total TTC** | **48 420,00 €** |\r\n\r\n---"
+    },
+    {
+      "id": "07_MISE_EN_DEMEURE_GENBIO_20230612",
+      "title": "MISE EN DEMEURE",
+      "date": "2023-06-12",
+      "text": "# MISE EN DEMEURE\r\n## Lettre du 12 juin 2023\r\n\r\n---\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\n---\r\n\r\n**Lettre recommandée avec accusé de réception**\r\n\r\nMadame Isabelle MOREAU\r\nDirectrice Générale\r\nCLINIQUE DU SUD\r\n128, avenue du Prado\r\n13008 MARSEILLE\r\n\r\nÀ Lyon, le 12 juin 2023\r\n\r\n**Objet : Mise en demeure - Retards de paiement répétés**\r\n**Réf : Contrat n° GENBIO-CDS-2018-0347**\r\n\r\nMadame la Directrice,\r\n\r\nNous avons l'honneur de vous mettre en demeure de procéder au règlement immédiat des sommes dues au titre de notre relation contractuelle.\r\n\r\n---\r\n\r\n### I. RAPPEL DES FAITS\r\n\r\nDepuis la signature du contrat-cadre de distribution en date du 15 mars 2018, notre société a toujours honorer ses engagements, tant sur le plan de la qualité des équipements et réactifs livrés que du service après-vente.\r\n\r\nForce est de constater que depuis le premier trimestre 2023, votre société accumulate des retards de paiement systematiques.\r\n\r\nMalgré nos relances répétées des 12 avril et 28 mai 2023, cette situation perdure et s'aggrave.\r\n\r\n---\r\n\r\n### II. MISE EN DEMEURE\r\n\r\nPar la présente, nous vous mettons en demeure de régulariser votre situation dans un délai de **15 jours** à compter de la réception de cette lettre, soit au plus tard le **27 juin 2023**.\r\n\r\nVous devrez acquitter :\r\n- Le montant des factures impayées majoré des pénalités de retard\r\n- Les indemnités forfaitaires de recouvrement\r\n\r\n---\r\n\r\n### III. MISE EN GARDE\r\n\r\nÀ défaut de régularisation dans le délai imparti, nous serons contraints de:\r\n1. Suspendre immédiatement toute nouvelle livraison de réactifs et équipements\r\n2. Résilier le contrat de distribution conformément à l'article 12.2 dudit contrat\r\n3. Engager toute procédure judiciaire utile pour le recoverement de nos créances\r\n\r\nNous vous prions de croire, Madame la Directrice, en l'expression de nos salutations distinguées.\r\n\r\n---\r\n\r\n**Pierre DURAND**\r\nPrésident\r\nSAS GEN-BIO\r\n\r\n---\r\n*Copie à : Service juridique GEN-BIO*"
+    },
+    {
+      "id": "08_REPONSE_CDS_MISE_EN_DEMEURE_20230625",
+      "title": "RÉPONSE À MISE EN DEMEURE",
+      "date": "2023-06-25",
+      "text": "# RÉPONSE À MISE EN DEMEURE\r\n## Lettre du 25 juin 2023\r\n\r\n---\r\n\r\n**CLINIQUE DU SUD**\r\n128, avenue du Prado\r\n13008 MARSEILLE\r\n\r\n---\r\n\r\n**Lettre recommandée avec accusé de réception**\r\n\r\nMonsieur Pierre DURAND\r\nPrésident\r\nSAS GEN-BIO\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\nÀ Marseille, le 25 juin 2023\r\n\r\n**Objet : Réponse à votre mise en demeure du 12 juin 2023**\r\n**Réf : Contrat n° GENBIO-CDS-2018-0347**\r\n\r\nMonsieur le Président,\r\n\r\nNous accusons bonne réception de votre courrier du 12 juin 2023 et nous permettons de vous faire part de nos observations.\r\n\r\n---\r\n\r\n### I. RECONNAISSANCE DE DIFFICULTÉS DE TRÉSORERIE\r\n\r\nNous reconnaissons effectivement que notre société traverse une période de difficultés de trésorerie temporaires, principalement liées à :\r\n\r\n1. Des retards de remboursement de la part de plusieurs caisses d'assurance-maladie\r\n2. Un retard dans le renouvellement de certains contrats avec les mutuelles partenaires\r\n3. Des investissements importants réalisés au cours du premier semestre 2023 pour l'ouverture du nouveau pôle d'analyses\r\n\r\nCes difficultés sont temporaires et nous mettons tout en œuvre pour les résoudre dans les meilleurs délais.\r\n\r\n---\r\n\r\n### II. PROPOSITION D'ÉCHELONNEMENT\r\n\r\nAfin de regulariser notre situation, nous vous proposons un échéancier de paiement sur 6 mois :\r\n\r\n- 1er règlement : 15 juillet 2023 - 25 000 €\r\n- 2e règlement : 15 août 2023 - 25 000 €\r\n- 3e règlement : 15 septembre 2023 - 25 000 €\r\n- 4e règlement : 15 octobre 2023 - 25 000 €\r\n- 5e règlement : 15 novembre 2023 - 25 000 €\r\n- 6e règlement : 15 décembre 2023 - 25 764 €\r\n\r\nTotal : 150 764 € (incluant les pénalités)\r\n\r\n---\r\n\r\n### III. ÉLÉMENTS COMPLÉMENTAIRES\r\n\r\nNous tenons également à vous informer que nous avons également des préoccupations concernant les équipements GEN-6000 livrés en janvier 2023, qui connaissent des dysfonctionnements recurrent depuis leur mise en service.\r\n\r\nNos équipes techniques ont signalés ces problèmes à plusieurs reprises (cf. nos lettres des 25 février, 20 mars et 15 avril 2023) mais ceux-ci n'ont pas été résolus de manière satisfaisante.\r\n\r\n---\r\n\r\nDans l'attente de votre réponse, nous vous prions d'agréer, Monsieur le Président, l'expression de nos salutations distinguées.\r\n\r\n---\r\n\r\n**Isabelle MOREAU**\r\nDirectrice Générale\r\nCLINIQUE DU SUD"
+    },
+    {
+      "id": "09_LOGS_EXPORT_GENTRACE_2022_2023",
+      "title": "RAPPORT D'EXPORTATION SYSTÈME GEN-TRACE",
+      "date": null,
+      "text": "# RAPPORT D'EXPORTATION SYSTÈME GEN-TRACE\r\n## Pièce n°9 - Logs d'accès et d'exportation\r\n\r\n---\r\n\r\n**Période analysée :** 1er février 2022 - 31 juillet 2023\r\n**Date du rapport :** 3 août 2023\r\n**Préparé par :** Service Conformité GEN-BIO\r\n\r\n---\r\n\r\n## RÉSUMÉ EXÉCUTIF\r\n\r\nL'analyse des logs d'accès au système GEN-TRACE révèle des connexions suspectes depuis une adresse IP localisée à Madrid, Espagne (185.45.72.188), sur une période de 18 mois.\r\n\r\n---\r\n\r\n## DONNÉES QUANTITATIVES\r\n\r\n| Période | Nombre de connexions | Volume de données exportées |\r\n|---------|---------------------|----------------------------|\r\n| Fév-Avr 2022 | 127 | 2.3 GB |\r\n| Mai-Juil 2022 | 189 | 3.1 GB |\r\n| Aoû-Déc 2022 | 203 | 3.8 GB |\r\n| Jan-Avr 2023 | 298 | 5.2 GB |\r\n| Mai-Juil 2023 | 430 | 7.1 GB |\r\n| **TOTAL** | **1 247** | **21.5 GB** |\r\n\r\n---\r\n\r\n## ADRESSE IP SUSPECTE\r\n\r\n- **Adresse IP :** 185.45.72.188\r\n- **Localisation :** Madrid, Espagne\r\n- **Fournisseur :** Telefonica Moviles Espana\r\n- **Organisation :** Non identifiée dans le Contrat\r\n\r\n---\r\n\r\n## PATRONNE D'ACCÈS\r\n\r\n| Type d'accès | Pourcentage |\r\n|--------------|-------------|\r\n| Consultations de données clients | 45% |\r\n| Exportations de fichiers | 38% |\r\n| Modifications de paramètres | 12% |\r\n| Accès administratif | 5% |\r\n\r\n---\r\n\r\n## FLACONS DE RÉACTIFS CONCERNÉS\r\n\r\nSur la base des mouvements de stock associés aux accès depuis cette IP :\r\n\r\n- **Nombre estimatif de flacons :** 1 247 unités\r\n- **Valeur estimée HT :** 380 000 €\r\n- **Type de réactifs :** GEN-TRACE Pro et Ultra\r\n\r\n---\r\n\r\n## CONCLUSION\r\n\r\nLes éléments collectés suggèrent une exportación non autorisée de réactifs vers l'Espagne. Une analyse plus approfondie est nécessaire pour confirmer ces allégations."
+    },
+    {
+      "id": "10_NOTIFICATION_RESILIATION_GENBIO_20230814",
+      "title": "NOTIFICATION DE RÉSI LIATION",
+      "date": "2023-08-14",
+      "text": "# NOTIFICATION DE RÉSI LIATION\r\n## Email du 14 août 2023\r\n\r\n---\r\n\r\n**De :** pierre.durand@genbio.fr\r\n**À :** isabelle.moreau@cliniquesud.fr\r\n**Objet : Notification de résiliation immédiate - Contrat n° GENBIO-CDS-2018-0347\r\n**Date :** 14 août 2023, 18h30\r\n**Priorité :** HAUTE\r\n\r\n---\r\n\r\nMadame MOREAU,\r\n\r\nPar la présente, je vous notifie la résiliation immédiate, à compter de ce jour, du contrat-cadre de distribution n° GENBIO-CDS-2018-0347 conclu entre la SAS GEN-BIO et la CLINIQUE DU SUD.\r\n\r\n---\r\n\r\n### FONDEMENT DE LA RÉSI LIATION\r\n\r\nCette résiliation repose sur l'article 12.2 du Contrat, qui permet au Fournisseur de résilier de plein droit et avec effet immédiat en cas de violation par le Distributeur de l'article 8.3 (interdiction de revente/exportation).\r\n\r\nLes éléments en notre possession établoquent de manière irréfutable que votre société a procéder à l'exportation irrégulière de réactifs GEN-BIO vers l'Espagne, en violation de la clause d'exclusivité et de l'interdiction de revente hors territoire prévues au Contrat.\r\n\r\nCette violation constitue un manquement grave qui justifie la résiliation immédiate sans préavis.\r\n\r\n---\r\n\r\n### CONSÉQUENCES DE LA RÉSI LIATION\r\n\r\nÀ compter de ce jour :\r\n\r\n1. **Suspension immédiate** de l'accès au portail de commandes en ligne GEN-BIO\r\n2. **Blocage** de toutes les expéditions en cours\r\n3. **Résiliation** de tous les contrats de maintenance en cours\r\n\r\n---\r\n\r\n### SOMMES DUES\r\n\r\nNotre société se réserve le droit de poursuivre le thérapeut de toutes les sommes dues au titre des factures impayées et des pénalités contractuelles.\r\n\r\n---\r\n\r\nNous vous prions de trouver ci-joint la confirmation de cette résiliation.\r\n\r\nCordialement,\r\n\r\n**Pierre DURAND**\r\nPrésident\r\nSAS GEN-BIO\r\n\r\n---\r\n*Cet email constitue la notification écrite visée à l'article 12.2 du Contrat*"
+    },
+    {
+      "id": "11_FACTURE_GENBIO_2023_0456_JUIN",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0456 - JUIN 2023\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0456**\r\n\r\n- Date d'émission : 20 juin 2023\r\n- Date d'exigibilité : 20 juillet 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Réactifs GEN-TRACE Pro (flacons 50ml) | 350 | 85,00 € | 29 750,00 € |\r\n| Solutions de contrôle qualité mensuel | 30 | 180,00 € | 5 400,00 € |\r\n| Kit de maintenance préventive GEN-6000 | 6 | 450,00 € | 2 700,00 € |\r\n| Acccessoires consommables | 200 | 12,50 € | 2 500,00 € |\r\n| Intervention technique (heures) | 8 | 95,00 € | 760,00 € |\r\n| | | **Sous-total** | **41 110,00 €** |\r\n| | | TVA 20% | 8 222,00 € |\r\n| | | **Total TTC** | **49 332,00 €** |\r\n\r\n---\r\n\r\n**Conditions de paiement :** Paiement à 30 jours date de facture\r\n**Pénalités de retard :** 3 fois le taux d'intérêt légal"
+    },
+    {
+      "id": "12_FACTURE_GENBIO_2023_0498_JUILLET",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0498 - JUILLET 2023\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0498**\r\n\r\n- Date d'émission : 25 juillet 2023\r\n- Date d'exigibilité : 24 août 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Réactifs GEN-TRACE Ultra (flacons 100ml) | 220 | 125,00 € | 27 500,00 € |\r\n| Kits de calibration GEN-6000 | 8 | 320,00 € | 2 560,00 € |\r\n| Solutions de réactifs de secours | 150 | 65,00 € | 9 750,00 € |\r\n| Formation technique supplémentaire | 2 | 450,00 € | 900,00 € |\r\n| Pièces de rechange GEN-4000 | 12 | 180,00 € | 2 160,00 € |\r\n| | | **Sous-total** | **42 870,00 €** |\r\n| | | TVA 20% | 8 574,00 € |\r\n| | | **Total TTC** | **51 444,00 €** |\r\n\r\n---\r\n\r\n**Conditions de paiement :** Paiement à 30 jours date de facture\r\n**Pénalités de retard :** 3 fois le taux d'intérêt légal"
+    },
+    {
+      "id": "13_FACTURE_GENBIO_2023_0512_AOUT",
+      "title": "FACTURE",
+      "date": null,
+      "text": "# FACTURE\r\n## N° 2023-0512 - AOÛT 2023\r\n\r\n**SAS GEN-BIO**\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\n---\r\n\r\n**FACTURE N° 2023-0512**\r\n\r\n- Date d'émission : 10 août 2023\r\n- Date d'exigibilité : 9 septembre 2023\r\n\r\n**CLIENT :** CLINIQUE DU SUD\r\n\r\n---\r\n\r\n### Désignation\r\n\r\n| Désignation | Qté | PU HT | Total HT |\r\n|-------------|-----|-------|----------|\r\n| Réactifs GEN-TRACE Pro (flacons 50ml) | 180 | 85,00 € | 15 300,00 € |\r\n| Solutions de validation hebdomadaire | 24 | 95,00 € | 2 280,00 € |\r\n| Kit de maintenance corrective GEN-6000 | 2 | 680,00 € | 1 360,00 € |\r\n| Intervention d'urgence (technicien) | 4 | 150,00 € | 600,00 € |\r\n| | | **Sous-total** | **19 540,00 €** |\r\n| | | TVA 20% | 3 908,00 € |\r\n| | | **Total TTC** | **23 448,00 €** |\r\n\r\n---\r\n\r\n**Conditions de paiement :** Paiement à 30 jours date de facture\r\n**Pénalités de retard :** 3 fois le taux d'intérêt légal"
+    },
+    {
+      "id": "14_TICKET_SUPPORT_CDS_GEN6000_PANNE_20230218",
+      "title": "TICKET DE SUPPORT TECHNIQUE",
+      "date": "2023-02-18",
+      "text": "# TICKET DE SUPPORT TECHNIQUE\r\n## Pièce n°14 - Panne du 18 février 2023\r\n\r\n---\r\n\r\n**TICKET N°** : SUP-2023-0412\r\n**Date de création :** 18/02/2023, 14:23\r\n**Client :** CLINIQUE DU SUD\r\n**Équipement :** Analyseur GEN-6000\r\n**Numéro de série :** GB-6000-0447\r\n\r\n---\r\n\r\n### DESCRIPTION DU PROBLÈME\r\n\r\nLe module de calibration de l'analyseur GEN-6000 présente des défaillances récurrentes. Les résultats d'analyse montrent des écarts importants par rapport aux valeurs attendues.\r\n\r\n**Symptômes observés :**\r\n- Messages d'erreur « CALIBRATION_ERROR » sur le panneau de contrôle\r\n- Résultats incohérents entre deux analyses du même échantillon\r\n- Alerte « STABILITY_FAIL » sur le module optique\r\n\r\n---\r\n\r\n### DIAGNOSTIC INITIAL\r\n\r\nLe technician de maintenance NOTE :\r\n\r\n> « Problème de calibration du module optique détecté. Les valeurs de référence semblent décalées. Nécessite analyse plus approfondie. »\r\n\r\n**Statut initial :** En attente d'intervention de niveau 2\r\n\r\n---\r\n\r\n### IMPACT\r\n\r\n- Interruption des analyses pendant 4 heures\r\n- Retard dans le traitement de 23 prélèvements patients\r\n- Nécessité de reroutage vers laboratoire externe pour 8 prélèvements urgents\r\n\r\n---\r\n\r\n**Rapporteur :** Jean-Michel TERRIEUR, Technicien de maintenance\r\n**Date de clôture prévue :** 25/02/2023"
+    },
+    {
+      "id": "16_DEMANDE_REPARATION_CDS_20230225_LETTER",
+      "title": "DEMANDE DE RÉPARATION",
+      "date": null,
+      "text": "# DEMANDE DE RÉPARATION\r\n## Pièce n°16 - 25 février 2023\r\n\r\n---\r\n\r\n**CLINIQUE DU SUD**\r\n128, avenue du Prado\r\n13008 MARSEILLE\r\n\r\n---\r\n\r\n**Lettre recommandée avec accusé de réception**\r\n\r\nMonsieur le Directeur Technique\r\nSAS GEN-BIO\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\nÀ Marseille, le 25 février 2023\r\n\r\n**Objet : Demande de réparation définitive - Équipements GEN-6000 défectueux**\r\n**Réf : Analyseur n° GB-6000-0447 - Contrat GENBIO-CDS-2018-0347**\r\n\r\nMonsieur le Directeur,\r\n\r\n---\r\n\r\n### I. CONSTATATION DES DYSFONCTIONNEMENTS\r\n\r\nDepuis la mise en service de l'analyseur GEN-6000 (janvier 2023), notre établissement constate des dysfonctionnements récurrents affectant le module de calibration.\r\n\r\nÀ ce jour, nous avons enregistré :\r\n- **18 février 2023** : Première panne signalée (ticket SUP-2023-0412)\r\n- **05 mars 2023** : Deuxième panne identique (ticket SUP-2023-0589)\r\n\r\nCes pannes provoquent des écarts de mesure pouvant atteindre **15%**, ce qui est inadmissible dans le domaine du diagnostic médical.\r\n\r\n---\r\n\r\n### II. IMPACT SUR NOTRE ÉTABLISSEMENT\r\n\r\nCes dysfonctionnements ont des conséquences majeures :\r\n- Interruption de notre activité d'analyses biologiques\r\n- Reroutage d'urgence vers des laboratoires tiers (coût supplémentaire : 3 200 €)\r\n- Risque pour la sécurité des patients\r\n- Dégradation de notre réputation auprès de la CPAM\r\n\r\n---\r\n\r\n### III. NOTRE DEMANDE\r\n\r\nPar la présente, nous vous sollicitons pour :\r\n\r\n1. **Réparation définitive** de l'analyseur dans un délai de **15 jours**\r\n2. **Extension de garantie** de 12 mois supplémentaire compte tenu des pannes\r\n3. **Remplacement** de l'équipement si la réparation n'est pas définitive\r\n\r\nNous vous rappelons que selon l'article 4.2 du contrat-cadre, vous êtes tenu d'assurer une maintenance préventive et curative des équipements.\r\n\r\n---\r\n\r\nDans l'attente de votre réponse, nous vous prions d'agréer, Monsieur le Directeur, l'expression de nos salutations distinguées.\r\n\r\n---\r\n\r\n**Isabelle MOREAU**\r\nDirectrice Générale\r\nCLINIQUE DU SUD\r\n\r\n---\r\n*Première demande formelle de réparation - CLINIQUE DU SUD*"
+    },
+    {
+      "id": "17_DEMANDE_REPARATION_CDS_20230320_LETTER",
+      "title": "RELANCE - DEMANDE DE RÉPARATION",
+      "date": null,
+      "text": "# RELANCE - DEMANDE DE RÉPARATION\r\n## Pièce n°17 - 20 mars 2023\r\n\r\n---\r\n\r\n**CLINIQUE DU SUD**\r\n128, avenue du Prado\r\n13008 MARSEILLE\r\n\r\n---\r\n\r\n**Lettre recommandée avec accusé de réception**\r\n\r\nMonsieur le Directeur Technique\r\nSAS GEN-BIO\r\n45, avenue Tony Garnier\r\n69007 LYON\r\n\r\nÀ Marseille, le 20 mars 2023\r\n\r\n**Objet : RELANCE - Équipements GEN-6000 défectueux - Risques pour les patients**\r\n**Réf : Analyseur n° GB-6000-0447**\r\n\r\nMonsieur le Directeur,\r\n\r\n---\r\n\r\n### I. RAPPEL\r\n\r\nNous nous permettons de vous relancer suite à notre courrier du 25 février 2023 (pièce n°16) relatif aux dysfonctionnements de l'analyseur GEN-6000 livré en janvier 2023.\r\n\r\nÀ ce jour, nous n'avons reçu aucune réponse de votre part, ni aucune intervention technique concrète.\r\n\r\n---\r\n\r\n### II. ÉLÉMENTS NOUVEAUX\r\n\r\nLe 5 mars 2023, une nouvelle panne est survenue (ticket SUP-2023-0589), confirmant le caractère récurrent du problème.\r\n\r\nNotre technician a identifié un **défaut de calibration du module optronique**, probablement lié au firmware.\r\n\r\n---\r\n\r\n### III. RISQUES POUR LES PATIENTS\r\n\r\nCes pannes répétées ont des conséquences directes sur la qualité des soins :\r\n\r\n1. **Résultats d'analyses erronés** : Écart mesuré jusqu'à 15%\r\n2. **Retards de diagnostic** : Prélèvements reroutés vers des laboratoires tiers\r\n3. **Risque médico-légal** : En cas d'erreur de diagnostic liée aux équipements défectueux\r\n\r\nNous ne pouvons accepter de continuer à utiliser des équipements dont la fiabilité n'est pas garantie.\r\n\r\n---\r\n\r\n### IV. MISE EN GARDE\r\n\r\nSans intervention corrective dans un délai de **10 jours**, nous serons contraints de:\r\n1. Suspendre l'utilisation des équipements GEN-6000\r\n2. Considérer que votre société manque à ses obligations contractuelles\r\n3. Engager une procédure contentieuse pour couvre nos préjudices\r\n\r\n---\r\n\r\nNous restons dans l'attente d'une réponse rapide et circonstanciée.\r\n\r\n---\r\n\r\n**Isabelle MOREAU**\r\nDirectrice Générale\r\nCLINIQUE DU SUD\r\n\r\n---\r\n*Deuxième demande - danger pour les patients*"
+    },
+    {
+      "id": "24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802",
+      "title": "NOTE INTERNE",
+      "date": "2023-08-02",
+      "text": "# NOTE INTERNE\r\n## Pièce n°24 - 2 août 2023\r\n\r\n---\r\n\r\n**CONFIDENTIEL - SERVICE CONFORMITÉ**\r\n\r\n---\r\n\r\n**NOTE INTERNE**\r\n\r\n**De :** Service Conformité GEN-BIO\r\n**À :** Direction Générale\r\n**Objet :** Audit revente alléguée - CLINIQUE DU SUD - Conclusions préliminaires\r\n**Date :** 2 août 2023\r\n**Classification :** Confidentiel\r\n\r\n---\r\n\r\n### I. MISSION\r\n\r\nSuite à la demande de la direction, notre service a analysé les logs d'accès au système GEN-TRACE pour la période février 2022 - juillet 2023 concernant CLINIQUE DU SUD.\r\n\r\n---\r\n\r\n### II. MÉTHODOLOGIE\r\n\r\nNous avons analysé :\r\n- Les logs de connexion (adresses IP, horaires, durée)\r\n- Les journaux d'exportation de données\r\n- Les mouvements de stocks associés\r\n- Les historiques de commandes et livraisons\r\n\r\n---\r\n\r\n### III. CONSTATATIONS\r\n\r\n#### A. Connexions Madrid\r\n\r\n- Nombre total de connexions depuis IP 185.45.72.188 : **1 247**\r\n- Période : février 2022 - juillet 2023\r\n- L'accès est autorisé depuis le 12 janvier 2022 (pièce n°20)\r\n\r\n#### B. Analyse des accès\r\n\r\nLes connexions depuis Madrid correspondent à :\r\n\r\n| Type d'activité | Pourcentage |\r\n|-----------------|-------------|\r\n| Consultations de données de recherche | 78% |\r\n| Téléchargements de rapports | 15% |\r\n| Consultations de stocks | 5% |\r\n| Exportations de données | 2% |\r\n\r\n#### C. Mouvements de stocks\r\n\r\nLes mouvements de stocks „anormaux\" détectés par le système s'expliquent par :\r\n- Augmentation des consommations internes (nouveau pôle analytique - juin 2022)\r\n- Transferts entre sites CDS (Marseille, Aix, Toulon)\r\n- Pertes et avaries déclarées\r\n\r\n---\r\n\r\n### IV. CONCLUSION\r\n\r\n> « Les éléments en notre possession sont **circonstanciels**. Ils ne permettent pas de démontrer de manière certaine une exportation illicite de réactifs vers l'Espagne.\r\n>\r\n> **Une analyse plus approfondie serait nécessaire avant toute accusation formelle.**\r\n>\r\n> Les connexions depuis Madrid semblent correspondre à des activités de recherche légitimes, conformément au contrat de collaboration avec le Dr. GARCIA. »\r\n\r\n---\r\n\r\n### V. RECOMMANDATIONS\r\n\r\n1. Ne pas engager de procédure sur la base de ces éléments seuls\r\n2. Demander des preuves complémentaires (factures de vente, bons de livraison)\r\n3. Considérer une approche amiable pour le réglement des retards de paiement\r\n\r\n---\r\n\r\n**Service Conformité GEN-BIO**"
+    }
+  ],
+  "generatedFrom": "legalvec_agent v1 (2026-05-09)"
+}
