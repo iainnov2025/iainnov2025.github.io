@@ -1,6 +1,118 @@
 ---
 import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
+import SourceChip from "../components/SourceChip.astro";
+import PieceList from "../components/PieceList.astro";
+import HeroSequence from "../components/home/HeroSequence.astro";
+import demo from "../data/demo/genbio.json";
+import type { DemoCase } from "../data/demo/types";
+
+const d = demo as DemoCase;
+const cited = ["01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315", "07_MISE_EN_DEMEURE_GENBIO_20230612", "24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802"];
+const citedPieces = d.pieces.filter((p) => cited.includes(p.id));
+
+const pains = [
+  { title: "Trop de pièces, trop peu de temps", text: "Chaque dossier accumule contrats, factures, correspondances et conclusions qu'il faut lire, trier et relier avant de pouvoir construire une stratégie." },
+  { title: "La peur du délai oublié", text: "Une échéance noyée dans un courrier ou une mise en demeure peut coûter cher. Humainement, cela arrive." },
+  { title: "Une IA qui invente", text: "Un résumé qui avance un fait ou une date sans pouvoir dire d'où ils viennent n'a pas sa place dans un dossier." },
+];
+const steps = [
+  { n: "01", title: "Vous déposez vos pièces", text: "Contrats, factures, correspondances, actes de procédure, dans les formats que vous utilisez déjà." },
+  { n: "02", title: "LegalVec structure et vérifie", text: "Chronologie, délais, position, SWOT et arguments sont extraits des pièces ; chaque affirmation est contrôlée contre la pièce qu'elle cite." },
+  { n: "03", title: "Vous obtenez un dossier prêt à relire", text: "Un tableau de bord par dossier, où chaque élément s'ouvre sur sa source. Vous corrigez, vous décidez." },
+];
 ---
-<Base title="LegalVec — l'analyse de dossiers de contentieux, pièces à l'appui" description="LegalVec analyse vos dossiers de contentieux commercial et relie chaque affirmation à la pièce qui la fonde." path="/">
-  <div class="container"><h1>LegalVec</h1><p>Bientôt.</p></div>
+<Base
+  title="LegalVec — l'analyse de dossiers de contentieux, pièces à l'appui"
+  description="LegalVec structure vos dossiers de contentieux commercial : chronologie, délais, SWOT, arguments. Chaque affirmation est reliée à la pièce qui la fonde."
+  path="/"
+>
+  <section class="hero">
+    <div class="container">
+      <p class="kicker">Pour les cabinets de contentieux des affaires</p>
+      <h1>Vos dossiers de contentieux, analysés avec les pièces à l'appui.</h1>
+      <p class="lede">Chaque affirmation est reliée à la pièce qui la fonde. Vous restez décisionnaire.</p>
+      <div class="ctas">
+        <Button href="/dossier-de-demonstration/">Explorer le dossier de démonstration</Button>
+        <Button href="/donnez-votre-avis/" variant="secondary">Donner votre avis (30 min)</Button>
+      </div>
+      <HeroSequence data={d} />
+    </div>
+  </section>
+
+  <Section kicker="Le constat" title="Trois frictions qui ralentissent chaque dossier">
+    <div class="cols" data-reveal>
+      {pains.map((p, i) => (
+        <div class="col" style={`--i:${i}`}>
+          <h3>{p.title}</h3>
+          <p class="muted">{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section kicker="Comment ça fonctionne" title="Trois étapes, sans changer vos habitudes" tone="surface">
+    <ol class="steps" data-reveal>
+      {steps.map((s, i) => (
+        <li style={`--i:${i}`}>
+          <p class="num">{s.n}</p>
+          <h3>{s.title}</h3>
+          <p class="muted">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
+  <Section kicker="La preuve, pas la promesse" title="Cliquez sur une affirmation : la pièce s'ouvre">
+    <div class="proof">
+      <p class="claim">La mise en demeure du 12 juin 2023 laisse quinze jours pour régulariser, soit jusqu'au 27 juin 2023. <SourceChip pieceId="07_MISE_EN_DEMEURE_GENBIO_20230612" /></p>
+      <p class="claim">La note interne du 2 août 2023 indique que les connexions depuis Madrid semblent correspondre à des activités de recherche légitimes. <SourceChip pieceId="24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802" /></p>
+      <p class="muted">Ce second exemple vient d'une correction : la première version de LegalVec avait présenté cette note comme la découverte d'un export illicite. C'est exactement ce que la vérification contre les pièces doit empêcher.</p>
+    </div>
+  </Section>
+
+  <Section tone="ink">
+    <div class="final">
+      <h2>Voyez ce que LegalVec fait d'un dossier complet</h2>
+      <p class="muted">Un dossier fictif de contentieux commercial, analysé et consultable sans inscription. Nous construisons LegalVec avec des avocats : votre regard de praticien nous intéresse.</p>
+      <div class="ctas">
+        <Button href="/dossier-de-demonstration/">Explorer le dossier de démonstration</Button>
+        <Button href="/donnez-votre-avis/" variant="secondary">Donner votre avis (30 min)</Button>
+      </div>
+    </div>
+  </Section>
+
+  <div class="container cited">
+    <PieceList pieces={citedPieces} heading="Pièces citées sur cette page" />
+  </div>
 </Base>
+
+<script>
+  import { initReveal } from "../scripts/reveal";
+  initReveal();
+</script>
+
+<style>
+  .hero { padding-block: var(--space-8) var(--space-7); }
+  .hero h1 { max-width: 18ch; }
+  .lede { font-size: var(--step-1); color: var(--color-muted); max-width: 46ch; }
+  .ctas { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-6) var(--space-7); }
+  .cols { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .cols { grid-template-columns: repeat(3, 1fr); } }
+  .col { border-top: 1px solid var(--color-ink); padding-top: var(--space-4); }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .num { font-family: var(--font-serif); font-size: var(--step-3); color: var(--color-accent); margin-bottom: var(--space-2); }
+  .proof { display: grid; gap: var(--space-4); max-width: 72ch; }
+  .claim { font-family: var(--font-serif); font-size: var(--step-1); line-height: 1.45; margin: 0; }
+  .final { max-width: 60ch; }
+  .final .ctas { margin-bottom: 0; }
+  .cited { margin-top: var(--space-8); }
+
+  :global([data-motion="ok"]) [data-reveal]:not([data-revealed="true"]) > * { opacity: 0; transform: translateY(8px); }
+  :global([data-motion="ok"]) [data-reveal][data-revealed="true"] > * {
+    transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 120ms);
+  }
+</style>

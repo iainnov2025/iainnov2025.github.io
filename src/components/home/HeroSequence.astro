@@ -1,0 +1,72 @@
+---
+/**
+ * The hero "case file coming in", built from the curated demo data (real product output).
+ * Steps: pieces → [flag, only when features.relevanceFlags] → timeline → swot → source.
+ */
+import type { DemoCase } from "../../data/demo/types";
+import Timeline from "../demo/Timeline.astro";
+import Swot from "../demo/Swot.astro";
+import SourceChip from "../SourceChip.astro";
+import Badge from "../Badge.astro";
+import { site } from "../../config/site";
+interface Props { data: DemoCase }
+const { data } = Astro.props;
+const PREFERRED = ["01_CONTRAT_CADRE", "02_FACTURE", "07_MISE_EN_DEMEURE", "08_REPONSE", "10_NOTIFICATION", "14_TICKET", "24_NOTE_INTERNE"];
+const pieceIds = PREFERRED.map((pre) => data.pieces.find((p) => p.id.startsWith(pre))?.id).filter((id): id is string => Boolean(id));
+const timeline = data.timeline.filter((e) => e.importance === "CRITIQUE").slice(0, 4);
+---
+<figure class="case-window" data-hero data-reveal aria-label="Extrait du dossier de démonstration analysé par LegalVec">
+  <div class="chrome"><span>{data.title}</span><Badge>Dossier fictif</Badge></div>
+  <div class="grid">
+    <div class="step pieces" data-hero-step="pieces" style="--i:0">
+      <p class="label">Pièces déposées</p>
+      <ul>{pieceIds.map((id) => <li class="mono">{id}</li>)}</ul>
+    </div>
+    {site.features.relevanceFlags && (
+      <div class="step flag" data-hero-step="flag" style="--i:1">
+        <p class="label">Pièce écartée</p>
+        <p class="mono">36_FACTURE_TELEPHONE_CDS_MAI_2023</p>
+        <p class="muted small">Sans rapport avec le litige : écartée de l'analyse.</p>
+      </div>
+    )}
+    <div class="step timeline" data-hero-step="timeline" style="--i:2">
+      <p class="label">Chronologie</p>
+      <Timeline data={timeline} compact />
+    </div>
+    <div class="step swot" data-hero-step="swot" style="--i:3">
+      <p class="label">SWOT</p>
+      <Swot data={data.swot} compact limit={1} />
+    </div>
+    <div class="step source" data-hero-step="source" style="--i:4">
+      <p class="label">Chaque affirmation renvoie à sa pièce</p>
+      <p class="claim">Contrat-cadre de distribution signé le 15 mars 2018 <SourceChip pieceId="01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315" /></p>
+    </div>
+  </div>
+  <figcaption class="muted">Extrait du dossier de démonstration, fictif. <a href="/dossier-de-demonstration/">Voir le dossier complet</a></figcaption>
+</figure>
+
+<style>
+  .case-window { margin: 0; border: 1px solid var(--color-line); border-radius: var(--radius-2); background: var(--color-surface); overflow: hidden; }
+  .chrome { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-5); border-bottom: 1px solid var(--color-line); font-size: var(--step--1); font-weight: 500; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--color-line); }
+  @media (min-width: 900px) {
+    .grid { grid-template-columns: 0.9fr 1.2fr 1.3fr; }
+    .source { grid-column: 1 / -1; }
+  }
+  .step { background: var(--color-surface); padding: var(--space-5); min-width: 0; }
+  .label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); margin-bottom: var(--space-3); }
+  .pieces ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .pieces li { font-size: 0.72rem; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-line); border-radius: var(--radius-1); background: var(--color-paper); }
+  .flag { border-left: 2px solid var(--color-warning); }
+  .small { font-size: var(--step--1); }
+  .claim { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-family: var(--font-serif); font-size: var(--step-1); }
+  .source { background: var(--color-accent-soft); }
+  figcaption { font-size: var(--step--1); padding: var(--space-3) var(--space-5); border-top: 1px solid var(--color-line); }
+
+  /* Motion only under <html data-motion="ok"> (set in <head>, never under reduced motion). */
+  :global([data-motion="ok"]) [data-hero]:not([data-revealed="true"]) .step { opacity: 0; transform: translateY(8px); }
+  :global([data-motion="ok"]) [data-hero][data-revealed="true"] .step {
+    transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+    transition-delay: calc(var(--i) * 180ms);
+  }
+</style>

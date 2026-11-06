@@ -69,10 +69,10 @@ a:hover { text-decoration-thickness: 2px; }
 img, svg { max-width: 100%; height: auto; }
 
 @media (prefers-reduced-motion: reduce) {
+  /* transition-duration hacks would make every property (transition-property: all) animate. */
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 }
