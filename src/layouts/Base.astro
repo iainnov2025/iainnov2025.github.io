@@ -15,7 +15,7 @@ interface Props {
   jsonLd?: object[];
   noindex?: boolean;
 }
-const { title, description, path, ogImage, jsonLd = [], noindex = false } = Astro.props;
+const { title, description, path, ogImage = "/og/default.png", jsonLd = [], noindex = false } = Astro.props;
 const url = canonical(site, path);
 const robots = noindex ? "noindex, nofollow" : robotsMeta(site);
 const fullTitle = path === "/" ? title : `${title} — LegalVec`;

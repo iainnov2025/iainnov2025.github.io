@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { formatDateFr } from "../../lib/dates";
+import { DISCLAIMER } from "../../lib/blog";
+import { site } from "../../config/site";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+const path = `/blog/${post.id}/`;
+const articleLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: iso(post.data.date),
+  dateModified: iso(post.data.updated ?? post.data.date),
+  author: { "@type": "Organization", name: post.data.author },
+  inLanguage: "fr-FR",
+  mainEntityOfPage: `${site.siteUrl}${path}`,
+  image: `${site.siteUrl}/og/${post.id}.png`,
+};
+---
+<Base title={post.data.title} description={post.data.description} path={path} ogImage={`/og/${post.id}.png`} jsonLd={[articleLd]}>
+  <article class="container post">
+    <p class="kicker"><a href="/blog/">Blog</a> · <time datetime={iso(post.data.date)}>{formatDateFr(iso(post.data.date))}</time></p>
+    <h1>{post.data.title}</h1>
+    <p class="lede">{post.data.description}</p>
+    <div class="body"><Content /></div>
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources officielles</h2>
+      <ul>{post.data.sources.map((s) => <li><a href={s.url} rel="noopener">{s.label}</a></li>)}</ul>
+    </section>
+    <p class="disclaimer muted">{DISCLAIMER}</p>
+  </article>
+</Base>
+
+<style>
+  .post { padding-block: var(--space-8); max-width: 72ch; }
+  .post h1 { font-size: var(--step-4); }
+  .lede { font-size: var(--step-1); color: var(--color-muted); }
+  .body :global(h2) { font-size: var(--step-2); margin-top: var(--space-7); }
+  .body :global(blockquote) { margin: var(--space-5) 0; padding: var(--space-3) var(--space-5); border-left: 2px solid var(--color-accent); background: var(--color-surface); font-family: var(--font-serif); font-size: var(--step-1); line-height: 1.5; }
+  .body :global(blockquote p) { max-width: none; }
+  .body :global(ul) { padding-left: 1.2em; }
+  .sources { margin-top: var(--space-7); border-top: 1px solid var(--color-line); padding-top: var(--space-5); }
+  .sources h2 { font-size: var(--step-1); font-family: var(--font-sans); font-weight: 600; }
+  .disclaimer { font-size: var(--step--1); margin-top: var(--space-6); }
+</style>

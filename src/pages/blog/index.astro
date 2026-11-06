@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { formatDateFr } from "../../lib/dates";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+---
+<Base title="Blog" description="Articles sur le contentieux des affaires et l'usage de l'IA par les avocats, chaque affirmation sourcée par les textes officiels." path="/blog/" ogImage="/og/default.png">
+  <div class="container intro">
+    <p class="kicker">Blog</p>
+    <h1>Notes de contentieux</h1>
+    <p class="lede">Des articles courts et sourcés, au plus près des textes officiels.</p>
+  </div>
+  <div class="container">
+    <ul class="posts">
+      {posts.map((p) => (
+        <li>
+          <p class="muted date"><time datetime={iso(p.data.date)}>{formatDateFr(iso(p.data.date))}</time></p>
+          <h2><a href={`/blog/${p.id}/`}>{p.data.title}</a></h2>
+          <p class="muted">{p.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8) var(--space-5); }
+  .lede { font-size: var(--step-1); }
+  .posts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); max-width: 78ch; }
+  .posts li { border-top: 1px solid var(--color-line); padding-top: var(--space-5); }
+  .posts h2 { font-size: var(--step-2); }
+  .posts h2 a { color: var(--color-ink); text-decoration: none; }
+  .posts h2 a:hover { text-decoration: underline; }
+  .date { font-size: var(--step--1); margin-bottom: var(--space-2); }
+</style>
