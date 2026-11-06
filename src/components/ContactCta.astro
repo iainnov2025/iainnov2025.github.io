@@ -1,0 +1,15 @@
+---
+import Button from "./Button.astro";
+import { site } from "../config/site";
+import { contactHref } from "../lib/contact";
+interface Props { subject?: string; label?: string }
+const { subject = "Avis sur LegalVec", label = "Écrire ou réserver un rendez-vous" } = Astro.props;
+const href = contactHref(site, subject);
+---
+{href
+  ? <span data-contact><Button href={href}>{label}</Button></span>
+  : <p data-contact class="notice muted">L'adresse de contact et la prise de rendez-vous en ligne seront disponibles très bientôt.</p>}
+
+<style>
+  .notice { border-left: 2px solid var(--color-line); padding-left: var(--space-4); }
+</style>

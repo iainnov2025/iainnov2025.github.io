@@ -1,0 +1,94 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
+import Timeline from "../components/demo/Timeline.astro";
+import Deadlines from "../components/demo/Deadlines.astro";
+import PieceList from "../components/PieceList.astro";
+import demo from "../data/demo/genbio.json";
+import type { DemoCase } from "../data/demo/types";
+import { site } from "../config/site";
+
+const d = demo as DemoCase;
+const timeline = d.timeline.slice(0, 5);
+const deadlines = d.deadlines.slice(3, 5);
+const cited = new Set([...timeline, ...deadlines].flatMap((x) => x.sources.map((s) => s.pieceId)));
+const pieces = d.pieces.filter((p) => cited.has(p.id));
+
+const analyses = [
+  { title: "Chronologie", text: "Toutes les dates et les événements extraits des pièces, classés, chacun relié à sa source." },
+  { title: "Délais", text: "Échéances procédurales et contractuelles avec leur fondement, pour qu'aucune ne passe inaperçue." },
+  { title: "Position", text: "Une évaluation qualitative de la position du client : atouts probatoires, faiblesses, pièces manquantes et comment les obtenir." },
+  { title: "SWOT", text: "Atouts, faiblesses, opportunités et menaces, avec une action concrète pour chacun." },
+  { title: "Arguments", text: "Pour chaque fondement juridique : charge de la preuve, notre argument, la meilleure objection adverse et notre réponse." },
+  { title: "Parties et relations", text: "Les parties et les acteurs moins visibles (assureurs, experts, sociétés mères) et ce qui les relie." },
+];
+---
+<Base
+  title="Produit"
+  description="Le tableau de bord LegalVec : chronologie, délais, position, SWOT, arguments et parties, chaque élément relié à sa pièce, avec un assistant qui propose et un avocat qui décide."
+  path="/produit/"
+>
+  <div class="container intro">
+    <p class="kicker">Produit</p>
+    <h1>Un tableau de bord par dossier, pas un simple résumé</h1>
+    <p class="lede">LegalVec lit les pièces d'un dossier de contentieux et en tire une vue d'ensemble que vous pouvez vérifier ligne par ligne.</p>
+  </div>
+
+  <Section kicker="Les analyses" title="Six angles sur chaque dossier">
+    <ul class="grid">
+      {analyses.map((a) => <li><h3>{a.title}</h3><p class="muted">{a.text}</p></li>)}
+    </ul>
+    <p class="muted small">Chaque analyse se lance depuis le tableau de bord, seule ou toutes ensemble.</p>
+  </Section>
+
+  <Section kicker="Exemple réel" title="Tiré du dossier de démonstration" tone="surface">
+    <div class="example">
+      <div><h3>Chronologie</h3><Timeline data={timeline} /></div>
+      <div><h3>Délais</h3><Deadlines data={deadlines} /></div>
+    </div>
+    <p><Button href="/dossier-de-demonstration/" variant="secondary">Voir le dossier complet</Button></p>
+  </Section>
+
+  <Section kicker="Avant toute analyse" title="Des contrôles qui évitent les mauvaises surprises">
+    <ul class="checks">
+      <li>
+        <div class="head"><h3>Pièces hors sujet</h3>{!site.features.relevanceFlags && <Badge tone="warning">Bientôt</Badge>}</div>
+        <p class="muted">Une facture de téléphone ou la pièce d'un autre dossier est signalée et écartée de l'analyse. Vous pouvez toujours la réintégrer.</p>
+      </li>
+      <li>
+        <div class="head"><h3>Données insuffisantes</h3><Badge tone="warning">Bientôt</Badge></div>
+        <p class="muted">S'il manque l'essentiel (partie adverse, prétentions, pièces qui fondent le litige), LegalVec ne lance pas l'analyse et vous dit précisément quoi ajouter.</p>
+      </li>
+      <li>
+        <div class="head"><h3>Vérification des affirmations</h3><Badge tone="warning">Bientôt</Badge></div>
+        <p class="muted">Chaque affirmation est contrôlée contre la pièce qu'elle cite ; ce qui n'est pas confirmé est retiré ou signalé.</p>
+      </li>
+      <li>
+        <div class="head"><h3>Textes officiels</h3><Badge tone="warning">Bientôt</Badge></div>
+        <p class="muted">Les articles et les décisions cités sont vérifiés sur Légifrance et Judilibre, dans leur version applicable. Un clic ouvre le texte officiel.</p>
+      </li>
+    </ul>
+  </Section>
+
+  <Section kicker="L'assistant" title="Il propose, vous décidez" tone="surface">
+    <p>À côté du tableau de bord, un assistant répond à vos questions sur le dossier, toujours avec ses sources. Il peut proposer d'ajouter une échéance, une partie ou une note, ou de lancer une analyse : rien ne change sans votre confirmation, et chaque action validée est tracée.</p>
+    <p class="muted">Il ne supprime rien, ne modifie aucune pièce, n'envoie aucun message et ne sort jamais du dossier ouvert. <Badge tone="warning">Bientôt</Badge></p>
+  </Section>
+
+  <div class="container"><PieceList pieces={pieces} heading="Pièces citées sur cette page" /></div>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8) var(--space-4); }
+  .lede { font-size: var(--step-1); }
+  .grid, .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } .checks { grid-template-columns: 1fr 1fr; } }
+  .grid li { border-top: 1px solid var(--color-ink); padding-top: var(--space-4); }
+  .checks li { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-1); padding: var(--space-5); }
+  .head { display: flex; gap: var(--space-3); align-items: baseline; flex-wrap: wrap; }
+  .example { display: grid; gap: var(--space-6); grid-template-columns: 1fr; margin-bottom: var(--space-5); }
+  @media (min-width: 1000px) { .example { grid-template-columns: 1.2fr 1fr; } }
+  .small { font-size: var(--step--1); margin-top: var(--space-5); }
+</style>

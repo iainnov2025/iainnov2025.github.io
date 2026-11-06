@@ -1,0 +1,29 @@
+---
+import Badge from "./Badge.astro";
+import { securityStatements, type SecurityStatement } from "../data/security";
+interface Props { ids?: SecurityStatement["id"][] }
+const { ids } = Astro.props;
+const items = ids ? securityStatements.filter((s) => ids.includes(s.id)) : securityStatements;
+---
+<ul class="commitments">
+  {items.map((s) => (
+    <li>
+      <div class="head">
+        <h3>{s.title}</h3>
+        {s.status === "verified" ? <Badge tone="accent">Vérifié</Badge> : <Badge tone="warning">En cours de mise en place</Badge>}
+      </div>
+      <p class="muted">{s.text}</p>
+      {s.status === "verified" && s.evidence && <p class="evidence">{s.evidence}</p>}
+    </li>
+  ))}
+</ul>
+
+<style>
+  .commitments { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .commitments { grid-template-columns: 1fr 1fr; } }
+  li { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-1); padding: var(--space-5); }
+  .head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); flex-wrap: wrap; }
+  h3 { margin: 0 0 var(--space-2); }
+  p { margin: 0; }
+  .evidence { font-size: var(--step--1); margin-top: var(--space-2); }
+</style>

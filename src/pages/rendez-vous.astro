@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import ContactCta from "../components/ContactCta.astro";
+---
+<Base
+  title="Prendre rendez-vous"
+  description="Réservez trente minutes avec l'équipe LegalVec pour une démonstration et un échange sur votre pratique du contentieux."
+  path="/rendez-vous/"
+>
+  <div class="container intro">
+    <p class="kicker">Rendez-vous</p>
+    <h1>Trente minutes pour voir LegalVec</h1>
+    <p class="lede">Une démonstration sur un dossier fictif de contentieux commercial, puis vos questions et vos remarques.</p>
+    <ContactCta subject="Rendez-vous LegalVec" label="Réserver un rendez-vous" />
+  </div>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8); }
+  .lede { font-size: var(--step-1); }
+</style>

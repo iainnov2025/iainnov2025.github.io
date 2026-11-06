@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Commitments from "../components/Commitments.astro";
+import ContactCta from "../components/ContactCta.astro";
+---
+<Base
+  title="Sécurité et confidentialité"
+  description="Ce à quoi LegalVec s'engage pour protéger vos dossiers : hébergement européen, absence d'exposition au Cloud Act, cloisonnement par cabinet, supervision par l'avocat."
+  path="/securite/"
+>
+  <div class="container intro">
+    <p class="kicker">Sécurité et confidentialité</p>
+    <h1>Vos dossiers restent vos dossiers</h1>
+    <p class="lede">Le secret professionnel n'est pas négociable. Voici ce à quoi LegalVec s'engage, et où en est chaque engagement.</p>
+    <p class="muted">LegalVec est en cours de construction. Un engagement n'est marqué « Vérifié » qu'une fois confirmé par écrit (contrat, accord de traitement des données ou audit). Les autres portent la mention « En cours de mise en place ».</p>
+  </div>
+
+  <Section kicker="Nos engagements" title="Ce que nous mettons en place">
+    <Commitments />
+  </Section>
+
+  <Section kicker="En attendant" title="Aucune donnée client réelle pendant la phase de découverte" tone="surface">
+    <p>Tant que LegalVec n'a pas de structure juridique ni d'accord de traitement des données à vous proposer, nous n'acceptons aucune donnée client réelle. Pour essayer LegalVec, utilisez le dossier de démonstration ou un dossier fictif ou entièrement anonymisé de votre pratique, sans nom ni élément permettant d'identifier une personne.</p>
+    <p class="muted">Ce site vitrine ne collecte aucune donnée : pas de formulaire, pas de cookie, pas de traceur.</p>
+  </Section>
+
+  <Section kicker="Une question" title="Une exigence de votre cabinet ou de votre barreau ?">
+    <p>Dites-nous ce que vous devez pouvoir vérifier avant d'utiliser un outil d'IA sur vos dossiers : c'est exactement ce que nous voulons construire.</p>
+    <ContactCta subject="Question sécurité" />
+  </Section>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8) var(--space-4); }
+  .lede { font-size: var(--step-1); }
+</style>

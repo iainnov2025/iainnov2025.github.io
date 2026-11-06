@@ -5,6 +5,7 @@ import Button from "../components/Button.astro";
 import SourceChip from "../components/SourceChip.astro";
 import PieceList from "../components/PieceList.astro";
 import HeroSequence from "../components/home/HeroSequence.astro";
+import Commitments from "../components/Commitments.astro";
 import demo from "../data/demo/genbio.json";
 import type { DemoCase } from "../data/demo/types";
 
@@ -72,6 +73,11 @@ const steps = [
     </div>
   </Section>
 
+  <Section kicker="Confidentialité" title="Pensé pour le secret professionnel" tone="surface">
+    <Commitments ids={["hebergement-france", "cloud-act", "entrainement", "supervision"]} />
+    <p class="more"><a href="/securite/">Tous nos engagements et leur état d'avancement</a></p>
+  </Section>
+
   <Section tone="ink">
     <div class="final">
       <h2>Voyez ce que LegalVec fait d'un dossier complet</h2>
@@ -107,6 +113,7 @@ const steps = [
   .proof { display: grid; gap: var(--space-4); max-width: 72ch; }
   .claim { font-family: var(--font-serif); font-size: var(--step-1); line-height: 1.45; margin: 0; }
   .final { max-width: 60ch; }
+  .more { margin-top: var(--space-5); }
   .final .ctas { margin-bottom: 0; }
   .cited { margin-top: var(--space-8); }
 

@@ -1,0 +1,46 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
+import ContactCta from "../components/ContactCta.astro";
+const agenda = [
+  "Comment vous préparez aujourd'hui un dossier de contentieux, et le temps que cela vous prend.",
+  "Une démonstration sur le dossier fictif GEN-BIO c/ Clinique du Sud, ou sur un dossier fictif de votre pratique.",
+  "Ce qui vous manquerait, ce qui vous gênerait, ce qu'il faudrait pour l'utiliser sur un vrai dossier.",
+];
+---
+<Base
+  title="Donnez votre avis"
+  description="LegalVec se construit avec des avocats. Trente minutes pour voir le produit et nous dire ce qu'il doit faire pour votre pratique."
+  path="/donnez-votre-avis/"
+>
+  <div class="container intro">
+    <p class="kicker">Phase de découverte</p>
+    <h1>Nous construisons LegalVec avec des avocats</h1>
+    <p class="lede">Rien n'est à vendre aujourd'hui. Nous cherchons des praticiens du contentieux des affaires prêts à nous donner trente minutes et un avis franc.</p>
+  </div>
+
+  <Section kicker="Trente minutes" title="Ce que nous verrons ensemble">
+    <ol class="agenda">{agenda.map((a) => <li>{a}</li>)}</ol>
+    <p class="muted">Pour tester LegalVec sur l'un de vos dossiers : dossier fictif ou entièrement anonymisé uniquement, sans nom ni élément identifiant. Aucune donnée client réelle n'est acceptée pendant cette phase.</p>
+  </Section>
+
+  <Section kicker="En retour" title="Ce que vous y gagnez" tone="surface">
+    <ul class="gains">
+      <li>Un accès anticipé à LegalVec dès qu'il sera disponible.</li>
+      <li>Un produit qui tient compte de vos contraintes : vos remarques orientent directement ce que nous construisons.</li>
+    </ul>
+  </Section>
+
+  <Section title="Prendre contact">
+    <ContactCta subject="Avis sur LegalVec (30 min)" />
+    <p class="alt">Vous préférez regarder d'abord ? <Button href="/dossier-de-demonstration/" variant="secondary">Explorer le dossier de démonstration</Button></p>
+  </Section>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8) var(--space-4); }
+  .lede { font-size: var(--step-1); }
+  .agenda, .gains { padding-left: 1.2em; display: grid; gap: var(--space-3); max-width: 70ch; }
+  .alt { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-top: var(--space-5); }
+</style>

@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import { team } from "../data/team";
+const members = team.filter((m) => m.consent);
+---
+<Base
+  title="À propos"
+  description="LegalVec est un projet français qui aide les cabinets de contentieux à analyser leurs dossiers, chaque affirmation reliée à sa pièce."
+  path="/a-propos/"
+>
+  <div class="container intro">
+    <p class="kicker">À propos</p>
+    <h1>Pourquoi LegalVec</h1>
+    <p class="lede">Un avocat qui prépare un dossier de contentieux passe des heures à lire, trier et relier des pièces avant de pouvoir réfléchir à sa stratégie. L'IA peut prendre en charge une partie de ce travail, à une condition : ne jamais avancer un fait sans pouvoir montrer d'où il vient.</p>
+    <p>LegalVec est construit autour de cette condition. Chaque date, chaque délai, chaque argument renvoie à la pièce qui le fonde, et l'avocat reste seul décisionnaire. C'est un projet français, développé avec des praticiens du contentieux des affaires.</p>
+  </div>
+
+  <Section kicker="L'équipe" title="Qui construit LegalVec" tone="surface">
+    <ul class="team">
+      {members.map((m) => (
+        <li>
+          <p class="name">{m.name}</p>
+          <p class="muted role">{m.role}</p>
+          {m.bio && <p>{m.bio}</p>}
+        </li>
+      ))}
+    </ul>
+  </Section>
+</Base>
+
+<style>
+  .intro { padding-block: var(--space-8) var(--space-4); }
+  .lede { font-size: var(--step-1); }
+  .team { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .team { grid-template-columns: repeat(3, 1fr); } }
+  .name { font-family: var(--font-serif); font-size: var(--step-1); margin-bottom: 0; }
+  .role { font-size: var(--step--1); }
+</style>
