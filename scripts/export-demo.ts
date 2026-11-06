@@ -45,8 +45,9 @@ interface Override {
   note: string;
 }
 interface PieceFix { replace: [string, string][]; note: string }
-interface SwotFix { text?: string; sources?: string[]; note: string }
-interface Curation { timeline: Record<string, Override>; deadlines: Record<string, Override>; pieces?: Record<string, PieceFix>; swot?: Record<string, SwotFix> }
+interface SwotFix { text?: string; sources?: string[]; exclude?: boolean; note: string }
+interface TextFix { from: string; to: string; note: string }
+interface Curation { timeline: Record<string, Override>; deadlines: Record<string, Override>; pieces?: Record<string, PieceFix>; swot?: Record<string, SwotFix>; position?: TextFix[]; claims?: TextFix[] }
 
 function readUtf8(path: string): string {
   const buf = readFileSync(path);
@@ -104,16 +105,24 @@ export function exportDemo(v1Dir: string, curation: Curation, report: string[] =
   deadlines.sort((a, b) => a.dueDate.localeCompare(b.dueDate));
 
   const swotItems = (items: any[], where: string): DemoSwotItem[] =>
-    items.map((i) => {
+    items.flatMap((i) => {
       const o = curation.swot?.[i.element];
+      if (o?.exclude) { report.push(`excluded swot (${where}): ${i.element.slice(0, 60)} — ${o.note}`); return []; }
       if (o) report.push(`swot fix (${where}): ${i.element.slice(0, 60)} — ${o.note}`);
-      return {
+      return [{
         text: o?.text ?? i.element,
         weight: i.poids,
         action: i.action_proposee ?? "",
         sources: refs(o?.sources ?? parseSources(i.source), `swot ${where}`),
-      };
+      }];
     });
+
+  const applyFixes = (text: string, fixes: TextFix[] | undefined, where: string) =>
+    (fixes ?? []).reduce((t, f) => {
+      if (!t.includes(f.from)) return t;
+      report.push(`${where} fix: "${f.from.slice(0, 50)}" — ${f.note}`);
+      return t.split(f.from).join(f.to);
+    }, text);
 
   // SWOT before pieces: its sources must be registered in `used`
   const swot = {
@@ -141,8 +150,12 @@ export function exportDemo(v1Dir: string, curation: Curation, report: string[] =
     jurisdiction: meta.procedure?.juridiction ?? "",
     perspective: "demandeur",
     parties: (meta.parties as any[]).map((p) => ({ name: p.display_name, role: p.role_procedure })),
-    claims: meta.pretentions?.client ?? [],
-    position: { level: pos.position_qualitative, justification: pos.position_qualitative_justification, summary: pos.resume_executive },
+    claims: (meta.pretentions?.client ?? []).map((c: string) => applyFixes(c, curation.claims, "claim")),
+    position: {
+      level: pos.position_qualitative,
+      justification: applyFixes(pos.position_qualitative_justification, curation.position, "position"),
+      summary: applyFixes(pos.resume_executive, curation.position, "position"),
+    },
     swot,
     timeline,
     deadlines,

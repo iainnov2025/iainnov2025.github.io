@@ -121,6 +121,37 @@
         "09_LOGS_EXPORT_GENTRACE_2022_2023"
       ],
       "note": "v1 gave no source. Piece 09 line 55: « Nombre estimatif de flacons : 1 247 unités » (an estimate; resale is GEN-BIO's allegation)."
+    },
+    "Absence de preuves des signalements de dysfonctionnements du GEN-6000 par CLINIQUE DU SUD": {
+      "exclude": true,
+      "note": "Contradicted by the dossier: repair letters 16, 17, 18 and support tickets 14, 15 are in the file."
+    },
+    "Obtenir les pièces manquantes (Pièces 21 et 22) pour évaluer leur impact réel": {
+      "exclude": true,
+      "note": "Pieces 21 (email interne) and 22 (WhatsApp) are in the dossier; they are not missing."
+    },
+    "Risque de prescription pour certaines factures impayées": {
+      "exclude": true,
+      "note": "Invoices of 2023 sued in January 2024: well inside the 5-year commercial prescription (art. L. 110-4 C. com.)."
     }
-  }
+  },
+  "position": [
+    {
+      "from": "GEN-BIO doit impérativement obtenir les pièces manquantes (Pièces 21 et 22), produire les preuves des signalements de dysfonctionnements, et solliciter une expertise technique indépendante.",
+      "to": "GEN-BIO doit analyser l'email interne (Pièce 21) et le message WhatsApp (Pièce 22), qui figurent au dossier, et solliciter une expertise technique indépendante.",
+      "note": "Pieces 21 and 22 are in the dossier; repair letters 16–18 prove the reports were made."
+    },
+    {
+      "from": "et de la revente illicite",
+      "to": "et de la revente alléguée",
+      "note": "Resale is GEN-BIO's allegation; piece 24 says the Madrid connections look legitimate."
+    }
+  ],
+  "claims": [
+    {
+      "from": "(mars–août 2023)",
+      "to": "(juin–août 2023)",
+      "note": "Assignation l.83: « factures des mois de juin, juillet et août 2023 – Pièces n°11, n°12 et n°13 »."
+    }
+  ]
 }

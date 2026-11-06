@@ -1,0 +1,59 @@
+---
+/**
+ * Progressive tabs: without JS every <section data-tab> renders stacked under its own <h2>.
+ * With JS a tablist is built from the sections' titles and only the selected panel shows.
+ */
+---
+<div class="demo-tabs" data-demo-tabs>
+  <slot />
+</div>
+
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>("[data-demo-tabs]")) {
+    const panels = [...root.querySelectorAll<HTMLElement>(":scope > section[data-tab]")];
+    if (panels.length < 2) continue;
+    const list = document.createElement("div");
+    list.setAttribute("role", "tablist");
+    list.setAttribute("aria-label", "Sections du dossier");
+    list.className = "tablist";
+    const tabs = panels.map((panel, i) => {
+      const name = panel.dataset.tab!;
+      const id = `tab-${panel.id}`;
+      const tab = document.createElement("button");
+      tab.type = "button";
+      tab.id = id;
+      tab.textContent = name;
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", panel.id);
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", id);
+      panel.querySelector<HTMLElement>(":scope > h2")?.classList.add("visually-hidden");
+      tab.addEventListener("click", () => select(i));
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") select((i + 1) % panels.length, true);
+        if (e.key === "ArrowLeft") select((i - 1 + panels.length) % panels.length, true);
+      });
+      list.append(tab);
+      return tab;
+    });
+    function select(i: number, focus = false) {
+      tabs.forEach((t, j) => {
+        t.setAttribute("aria-selected", String(i === j));
+        t.tabIndex = i === j ? 0 : -1;
+        panels[j].hidden = i !== j;
+      });
+      if (focus) tabs[i].focus();
+    }
+    root.prepend(list);
+    const fromHash = panels.findIndex((p) => `#${p.id}` === location.hash);
+    select(fromHash > -1 ? fromHash : 0);
+  }
+</script>
+
+<style is:global>
+  .demo-tabs > section[data-tab] { padding-block: var(--space-6); }
+  .demo-tabs .tablist { display: flex; flex-wrap: wrap; gap: var(--space-1); border-bottom: 1px solid var(--color-line); margin-bottom: var(--space-5); }
+  .demo-tabs [role="tab"] { font: inherit; font-size: var(--step--1); font-weight: 500; background: none; border: 0; border-bottom: 2px solid transparent; padding: var(--space-3) var(--space-4); cursor: pointer; color: var(--color-muted); }
+  .demo-tabs [role="tab"][aria-selected="true"] { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+  .demo-tabs [role="tabpanel"] { padding-block: 0; }
+</style>

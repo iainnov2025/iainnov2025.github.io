@@ -1,0 +1,20 @@
+---
+import type { DemoCase } from "../../data/demo/types";
+interface Props { data: DemoCase["position"] }
+const { data } = Astro.props;
+---
+<div class="position">
+  <p class="kicker">Évaluation qualitative de la position</p>
+  <p class="level">{data.level}</p>
+  <p>{data.justification}</p>
+  <details>
+    <summary>Synthèse complète</summary>
+    <p>{data.summary}</p>
+  </details>
+</div>
+
+<style>
+  .position { background: var(--color-surface); border: 1px solid var(--color-line); padding: var(--space-5); border-radius: var(--radius-1); }
+  .level { font-family: var(--font-serif); font-size: var(--step-3); margin: 0 0 var(--space-3); }
+  summary { cursor: pointer; font-size: var(--step--1); font-weight: 500; }
+</style>

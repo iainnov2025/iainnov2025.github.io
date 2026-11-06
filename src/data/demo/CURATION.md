@@ -8,8 +8,8 @@ Every correction below was checked against the cited piece.
 
 On its own test case, the v1 run produced **12 wrong or unsupported facts among 23 timeline events**
 (9 wrong dates; 1 wrong date whose meaning was also inverted; 1 hearing mislabelled as a filing;
-1 unsupported event), **2 mis-sourced events, 1 wrong legal basis
-and 2 mis-sourced SWOT items**. Nothing here was visible to v1's citation check, because it only
+1 unsupported event), **2 mis-sourced events, 1 wrong legal basis,
+2 mis-sourced SWOT items and 3 SWOT items contradicted by the dossier itself**. Nothing here was visible to v1's citation check, because it only
 verified that a cited file existed. This is the strongest argument for the v2 verifier agent and the
 timeline/deadline eval suites (spec 04 §4.3).
 
@@ -31,6 +31,11 @@ timeline/deadline eval suites (spec 04 §4.3).
 | Mise-en-demeure deadline basis | « Article 12.2 du Contrat » | 07 l.43, 15-day notice (12.2 = résiliation clause) | basis fixed |
 | SWOT atout 127 450 € | cited invoices 02/03/04 (134 184 € together) | assignation l.83: invoices June–August, pieces 11, 12, 13 | sources + wording fixed |
 | SWOT atout GEN-TRACE 1 247 flacons | no source | 09 l.55 « Nombre estimatif de flacons : 1 247 » | source 09, « estimés », « revente alléguée » |
+| SWOT faille « Absence de preuves des signalements » | weakness | repair letters 16–18 and tickets 14–15 are in the file | excluded |
+| SWOT opportunité « Obtenir les pièces manquantes (21 et 22) » | pieces missing | pieces 21 and 22 are in the file | excluded; summary rewritten |
+| SWOT menace « Risque de prescription » | threat | 2023 invoices sued in January 2024, inside 5 years (L. 110-4 C. com.) | excluded |
+| Position summary « revente illicite » | stated as fact | allegation; piece 24 says connections look legitimate | « revente alléguée » |
+| Claim « 127 450 € … (mars–août 2023) » | March–August | assignation l.83: June–August | « juin–août 2023 » |
 | Pieces 07 and 17 text | « nous我们将被迫 de » | generation glitch in synthetic piece | « nous serons contraints de » |
 
 Dropped automatically (see export report): 3 events marked « (estimation) », 2 undated events,

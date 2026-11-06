@@ -1,0 +1,78 @@
+---
+import Base from "../layouts/Base.astro";
+import DemoTabs from "../components/demo/DemoTabs.astro";
+import Timeline from "../components/demo/Timeline.astro";
+import Deadlines from "../components/demo/Deadlines.astro";
+import Swot from "../components/demo/Swot.astro";
+import Position from "../components/demo/Position.astro";
+import PieceList from "../components/PieceList.astro";
+import Button from "../components/Button.astro";
+import demo from "../data/demo/genbio.json";
+import type { DemoCase } from "../data/demo/types";
+import { site } from "../config/site";
+
+const d = demo as DemoCase;
+const nextDeadlines = d.deadlines.slice(-3);
+---
+<Base
+  title="Dossier de démonstration"
+  description="Explorez un dossier fictif de contentieux commercial analysé par LegalVec : chronologie, délais, SWOT, chaque élément relié à sa pièce."
+  path="/dossier-de-demonstration/"
+>
+  <div class="container">
+    <header class="case-header">
+      <p class="kicker">Dossier de démonstration · fictif · {d.reference}</p>
+      <h1>{d.title}</h1>
+      <p class="facts muted">{d.jurisdiction} · {d.parties.map((p) => `${p.name} (${p.role})`).join(" · ")}</p>
+      <div class="notice" role="note">
+        <p><strong>Aperçu d'analyse générée par LegalVec</strong> sur un dossier fictif (GenBio c/ Clinique du Sud). Version de démonstration, en lecture seule.</p>
+        <p class="muted">Analyse produite par la première version de LegalVec, puis vérifiée à la main contre les pièces : les erreurs relevées ont été corrigées. Analyse rédigée du point de vue du demandeur, GEN-BIO.</p>
+      </div>
+      {site.demoAppUrl && <p><Button href={site.demoAppUrl}>Ouvrir dans l'application</Button></p>}
+    </header>
+
+    <DemoTabs>
+      <section data-tab="Aperçu" id="apercu">
+        <h2>Aperçu</h2>
+        <div class="overview">
+          <Position data={d.position} />
+          <div>
+            <h3>Prétentions du demandeur</h3>
+            <ul class="claims">{d.claims.map((c) => <li>{c}</li>)}</ul>
+            <h3>Derniers délais identifiés</h3>
+            <Deadlines data={nextDeadlines} compact />
+          </div>
+        </div>
+      </section>
+      <section data-tab="Chronologie" id="chronologie">
+        <h2>Chronologie</h2>
+        <p class="muted">{d.timeline.length} événements extraits des pièces, chacun relié à sa source.</p>
+        <Timeline data={d.timeline} />
+      </section>
+      <section data-tab="Délais" id="delais">
+        <h2>Délais</h2>
+        <Deadlines data={d.deadlines} />
+      </section>
+      <section data-tab="SWOT" id="swot">
+        <h2>SWOT</h2>
+        <Swot data={d.swot} />
+      </section>
+      <section data-tab="Pièces" id="pieces">
+        <PieceList pieces={d.pieces} />
+      </section>
+    </DemoTabs>
+  </div>
+</Base>
+
+<style>
+  .case-header { padding-block: var(--space-7) var(--space-4); }
+  .case-header h1 { font-size: var(--step-4); }
+  .facts { font-size: var(--step--1); }
+  .notice { border-left: 2px solid var(--color-accent); padding: var(--space-3) var(--space-5); background: var(--color-accent-soft); margin-block: var(--space-5); }
+  .notice p { margin: 0 0 var(--space-2); max-width: none; }
+  .notice p:last-child { margin: 0; font-size: var(--step--1); }
+  .overview { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .overview { grid-template-columns: 1fr 1fr; } }
+  .claims { padding-left: 1.1em; margin: 0 0 var(--space-6); }
+  .claims li { margin-bottom: var(--space-2); }
+</style>

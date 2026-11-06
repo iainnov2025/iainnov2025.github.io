@@ -39,7 +39,7 @@ describe("built site", () => {
     it("has a canonical URL on the site", () =>
       expect(root.querySelector('link[rel="canonical"]')?.getAttribute("href")).toMatch(/^https:\/\/iainnov2025\.github\.io\//));
     it("has the right robots meta", () => {
-      const expected = /brand-preview|test-composants/.test(file) ? "noindex, nofollow" : robotsMeta(site);
+      const expected = /brand-preview/.test(file) ? "noindex, nofollow" : robotsMeta(site);
       expect(root.querySelector('meta[name="robots"]')?.getAttribute("content")).toBe(expected);
     });
     it("contains no banned copy", () => expect(findBanned(text)).toEqual([]));

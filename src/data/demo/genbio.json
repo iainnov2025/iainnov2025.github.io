@@ -14,7 +14,7 @@
     }
   ],
   "claims": [
-    "Paiement de 127 450 € TTC de factures impayées (mars–août 2023)",
+    "Paiement de 127 450 € TTC de factures impayées (juin–août 2023)",
     "Indemnisation de 1 200 000 € pour rupture brutale (Art. L. 442-1 II C.com.)",
     "Restitution de 380 000 € HT pour revente illicite en Espagne (Art. L. 442-6 C.com.)",
     "Dommages et intérêts pour violation de la clause d'exclusivité (art. 8.3 du Contrat)"
@@ -22,7 +22,7 @@
   "position": {
     "level": "Fragile",
     "justification": "La position de GEN-BIO est affaiblie par des lacunes probatoires majeures et des risques critiques liés à la connaissance préalable des défauts du GEN-6000, bien que certains fondements juridiques et preuves soient solides.",
-    "summary": "La position de GEN-BIO repose sur des fondements juridiques solides (rupture brutale, violation de clause d'exclusivité) et des preuves documentaires des factures impayées et de la revente illicite. Cependant, cette position est sérieusement fragilisée par des risques critiques liés à la connaissance préalable des défauts du GEN-6000 (email Pièce 21) et à la possible préméditation de la rupture (WhatsApp Pièce 22). La reconvention de CLINIQUE DU SUD pour défaut de conformité (850 000 €) ajoute un risque financier majeur. Pour renforcer sa position, GEN-BIO doit impérativement obtenir les pièces manquantes (Pièces 21 et 22), produire les preuves des signalements de dysfonctionnements, et solliciter une expertise technique indépendante. Sans ces éléments, la probabilité de succès total reste limitée."
+    "summary": "La position de GEN-BIO repose sur des fondements juridiques solides (rupture brutale, violation de clause d'exclusivité) et des preuves documentaires des factures impayées et de la revente alléguée. Cependant, cette position est sérieusement fragilisée par des risques critiques liés à la connaissance préalable des défauts du GEN-6000 (email Pièce 21) et à la possible préméditation de la rupture (WhatsApp Pièce 22). La reconvention de CLINIQUE DU SUD pour défaut de conformité (850 000 €) ajoute un risque financier majeur. Pour renforcer sa position, GEN-BIO doit analyser l'email interne (Pièce 21) et le message WhatsApp (Pièce 22), qui figurent au dossier, et solliciter une expertise technique indépendante. Sans ces éléments, la probabilité de succès total reste limitée."
   },
   "swot": {
     "atouts": [
@@ -110,12 +110,6 @@
         "sources": []
       },
       {
-        "text": "Absence de preuves des signalements de dysfonctionnements du GEN-6000 par CLINIQUE DU SUD",
-        "weight": "IMPORTANT",
-        "action": "Obtenir les logs des tickets de support et les échanges écrits pour démontrer que les dysfonctionnements ont été signalés tardivement ou de manière insuffisante. Solliciter une expertise pour évaluer la gravité des dysfonctionnements.",
-        "sources": []
-      },
-      {
         "text": "Risque de partialité des logs GEN-TRACE (preuve de la revente illicite)",
         "weight": "IMPORTANT",
         "action": "Demander une expertise judiciaire pour authentifier les logs et établir un lien direct avec CLINIQUE DU SUD. Produire des témoignages des employés impliqués dans la revente.",
@@ -148,12 +142,6 @@
         "sources": []
       },
       {
-        "text": "Risque de prescription pour certaines factures impayées",
-        "weight": "MINEUR",
-        "action": "Vérifier les délais de prescription pour chaque facture et produire les preuves des relances pour interrompre la prescription.",
-        "sources": []
-      },
-      {
         "text": "Risque réputationnel pour GEN-BIO en cas de médiatisation du litige",
         "weight": "MINEUR",
         "action": "Préparer une communication de crise pour limiter l'impact médiatique. Mettre en avant les efforts de GEN-BIO pour résoudre les dysfonctionnements du GEN-6000.",
@@ -161,12 +149,6 @@
       }
     ],
     "opportunites": [
-      {
-        "text": "Obtenir les pièces manquantes (Pièces 21 et 22) pour évaluer leur impact réel",
-        "weight": "CRITIQUE",
-        "action": "",
-        "sources": []
-      },
       {
         "text": "Solliciter une expertise judiciaire pour authentifier les logs GEN-TRACE et évaluer les dysfonctionnements du GEN-6000",
         "weight": "CRITIQUE",

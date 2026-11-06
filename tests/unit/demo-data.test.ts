@@ -100,6 +100,20 @@ describe("demo case data", () => {
     expect(a?.sources.map((s) => s.pieceId)).toContain("09_LOGS_EXPORT_GENTRACE_2022_2023");
   });
 
+  it("does not call evidence missing when the dossier contains it (repair letters 16–18, pieces 21–22)", () => {
+    const all = JSON.stringify({ swot: d.swot, position: d.position });
+    expect(all).not.toMatch(/Absence de preuves des signalements/);
+    expect(all).not.toMatch(/pièces manquantes \(Pièces 21 et 22\)/i);
+  });
+
+  it("drops the unfounded prescription threat on 2023 invoices sued in January 2024", () => {
+    expect(d.swot.menaces.some((m) => /prescription/i.test(m.text))).toBe(false);
+  });
+
+  it("states the unpaid-invoice claim for June–August 2023, as in the assignation", () => {
+    expect(d.claims.find((c) => c.includes("127 450"))).toMatch(/juin–août 2023/);
+  });
+
   it("has no stray CJK characters in pieces", () => {
     for (const p of d.pieces) expect(p.text, p.id).not.toMatch(/[㐀-鿿]/);
   });

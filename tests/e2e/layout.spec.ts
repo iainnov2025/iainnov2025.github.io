@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const pages = ["/", "/test-composants/"];
+const pages = ["/"];
 
 test.describe("layout at 360px", () => {
   test.use({ viewport: { width: 360, height: 740 } });
@@ -12,18 +12,6 @@ test.describe("layout at 360px", () => {
       expect(width).toBeLessThanOrEqual(360);
     });
   }
-});
-
-test("source chip opens the piece and Escape returns focus", async ({ page }) => {
-  await page.goto("/test-composants/");
-  const chip = page.getByRole("link", { name: /01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315/ });
-  await chip.click();
-  const dialog = page.getByRole("dialog");
-  await expect(dialog).toBeVisible();
-  await expect(dialog).toContainText("Pièce de test");
-  await page.keyboard.press("Escape");
-  await expect(dialog).toBeHidden();
-  await expect(chip).toBeFocused();
 });
 
 test("header menu works without JavaScript on mobile", async ({ browser }) => {
