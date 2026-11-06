@@ -3,7 +3,8 @@ import { test, expect } from "@playwright/test";
 const pages = [
   "/", "/produit/", "/dossier-de-demonstration/", "/securite/", "/donnez-votre-avis/", "/rendez-vous/",
   "/a-propos/", "/blog/", "/blog/rupture-brutale-article-l442-1-ii/", "/blog/prescription-commerciale-article-l110-4/",
-  "/blog/ia-generative-secret-professionnel-questions/", "/mentions-legales/", "/cgu/", "/confidentialite/", "/cookies/",
+  "/blog/ia-generative-secret-professionnel-questions/", "/blog/calcul-des-delais-procedure-civile-articles-640-642/",
+  "/faq/", "/contact/", "/mentions-legales/", "/cgu/", "/confidentialite/", "/cookies/",
 ];
 
 test.use({ viewport: { width: 360, height: 740 } });

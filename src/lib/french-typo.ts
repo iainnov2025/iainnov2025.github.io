@@ -41,7 +41,11 @@ export function fixHtmlTypography(html: string): string {
         const fixed = t.rawText
           .split(/(&#?\w+;)/)
           .map((seg) => (/^&#?\w+;$/.test(seg) ? seg : fixFrenchTypography(seg)))
-          .join("");
+          .join("")
+          // punctuation right after an inline element: "<strong>x</strong> ;"
+          .replace(new RegExp(`^[ \\u00A0\\u202F]+([;!?])(?=\\s|$)`), `${NNBSP}$1`)
+          .replace(new RegExp(`^[ \\u00A0\\u202F]+:(?=\\s|$)`), `${NBSP}:`)
+          .replace(new RegExp(`^[ \\u00A0\\u202F]+»`), `${NBSP}»`);
         if (fixed !== t.rawText) t.rawText = fixed;
       }
       return;

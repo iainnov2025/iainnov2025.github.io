@@ -4,6 +4,7 @@ description: "Relation commerciale établie, préavis écrit, plafond de dix-hui
 date: 2026-11-06
 author: "LegalVec"
 tags: ["rupture brutale", "code de commerce", "pratiques restrictives"]
+pillar: "contentieux-commercial"
 sources:
   - label: "Code de commerce, article L. 442-1 (version en vigueur depuis le 20 août 2026)"
     url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000054716237"

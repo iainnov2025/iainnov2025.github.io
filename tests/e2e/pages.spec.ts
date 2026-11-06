@@ -12,13 +12,13 @@ test("feedback page asks for advice, not a purchase, and offers a contact path",
   await page.goto("/donnez-votre-avis/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("avec des avocats");
   await expect(page.getByText(/dossier fictif ou entièrement anonymisé/i).first()).toBeVisible();
-  await expect(page.locator("[data-contact]").first()).toBeVisible(); // link when configured, notice otherwise
+  await expect(page.locator("[data-contact]").first()).toBeVisible(); // booking/mailbox when configured, contact form otherwise
 });
 
 test("booking page falls back to a contact link while no booking tool exists", async ({ page }) => {
   await page.goto("/rendez-vous/");
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.locator("[data-contact]").first()).toBeVisible(); // link when configured, notice otherwise
+  await expect(page.locator("[data-contact]").first()).toBeVisible(); // booking/mailbox when configured, contact form otherwise
 });
 
 test("product page describes the dashboard and labels unshipped checks", async ({ page }) => {

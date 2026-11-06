@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
   <div class="container grid">
     <div>
       <p class="name">LegalVec</p>
-      <p class="muted">Analyse de dossiers de contentieux, avec les pièces à l'appui. Projet français en cours de construction avec des avocats.</p>
+      <p class="muted">Analyse de dossiers de contentieux, avec les pièces à l'appui. Projet français en construction, ouvert à l'avis des avocats.</p>
     </div>
     <nav aria-label="Informations légales">
       <a href="/mentions-legales/">Mentions légales</a>
@@ -15,7 +15,10 @@ const year = new Date().getFullYear();
       <a href="/cookies/">Cookies</a>
     </nav>
     <nav aria-label="Contact">
+      <a href="/contact/">Nous contacter</a>
       <a href="/donnez-votre-avis/">Donner votre avis</a>
+      <a href="/faq/">Questions fréquentes</a>
+      <a href="/a-propos/">À propos</a>
       <a href="/rendez-vous/">Prendre rendez-vous</a>
       {site.contactEmail && <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>}
       <a href="/rss.xml">Flux RSS du blog</a>

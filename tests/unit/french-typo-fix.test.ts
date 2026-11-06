@@ -38,4 +38,10 @@ describe("fixHtmlTypography", () => {
     expect(out).toContain("<code>a : b</code>");
     expect(out).toContain("var x = 1 ? 2 : 3;");
   });
+  it("fixes punctuation that follows an inline element", () => {
+    const out = fixHtmlTypography("<p><strong>confidentialité</strong> ; prend <em>note</em> : fin <b>oui</b> ?</p>");
+    expect(out).toContain(`</strong>${NNBSP}; prend`);
+    expect(out).toContain(`</em>${NBSP}: fin`);
+    expect(out).toContain(`</b>${NNBSP}?`);
+  });
 });

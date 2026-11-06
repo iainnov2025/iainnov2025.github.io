@@ -4,6 +4,7 @@ description: "Ce que dit l'article L. 110-4, comment le Code civil fixe le point
 date: 2026-11-06
 author: "LegalVec"
 tags: ["prescription", "code de commerce", "code civil"]
+pillar: "contentieux-commercial"
 sources:
   - label: "Code de commerce, article L. 110-4"
     url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027725867"

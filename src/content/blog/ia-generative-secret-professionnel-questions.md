@@ -4,6 +4,7 @@ description: "Avant de confier des pièces à un outil d'IA, quelques questions 
 date: 2026-11-06
 author: "LegalVec"
 tags: ["secret professionnel", "intelligence artificielle", "RGPD"]
+pillar: "ia-et-cabinet"
 sources:
   - label: "Loi n° 71-1130 du 31 décembre 1971, notamment l'article 66-5"
     url: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000508793"

@@ -9,6 +9,7 @@ const base: SiteConfig = {
   publisherAddress: "",
   contactEmail: "",
   bookingUrl: null,
+  contactFormEndpoint: null,
   demoAppUrl: null,
   analyticsScriptUrl: null,
   features: { relevanceFlags: false },

@@ -7,7 +7,7 @@ const links = [
   { href: "/dossier-de-demonstration/", label: "Dossier de démonstration" },
   { href: "/securite/", label: "Sécurité" },
   { href: "/blog/", label: "Blog" },
-  { href: "/a-propos/", label: "À propos" },
+  { href: "/faq/", label: "FAQ" },
 ];
 const current = (href: string) => (path.startsWith(href) ? "page" : undefined);
 ---
@@ -16,13 +16,13 @@ const current = (href: string) => (path.startsWith(href) ? "page" : undefined);
     <a class="brand" href="/" aria-label="LegalVec — accueil" set:html={logo} />
     <nav class="desktop" aria-label="Navigation principale">
       {links.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
-      <a class="cta" href="/donnez-votre-avis/">Donner votre avis</a>
+      <a class="cta" href="/contact/">Nous contacter</a>
     </nav>
     <details class="mobile">
       <summary>Menu</summary>
       <nav aria-label="Navigation mobile">
         {links.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
-        <a class="cta" href="/donnez-votre-avis/">Donner votre avis</a>
+        <a class="cta" href="/contact/">Nous contacter</a>
       </nav>
     </details>
   </div>

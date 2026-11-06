@@ -1,0 +1,109 @@
+---
+/**
+ * Scroll-told 3D scene: the pile of pieces becomes a sorted, dated, verified case.
+ * Each card carries its transform for every step as CSS variables computed here.
+ * Without JS or under reduced motion the scene shows its final state, with no transition.
+ */
+import type { DemoCase } from "../../data/demo/types";
+import { pieceKind, shortDate } from "../../lib/dashboard";
+interface Props { data: DemoCase }
+const { data } = Astro.props;
+
+const PICK = ["01_CONTRAT", "02_FACTURE", "03_FACTURE", "04_FACTURE", "07_MISE", "08_REPONSE", "09_LOGS", "10_NOTIF", "11_FACTURE", "14_TICKET", "17_DEMANDE", "24_NOTE"];
+const pieces = PICK.map((p) => data.pieces.find((x) => x.id.startsWith(p))!).filter(Boolean);
+const dateOf = (id: string) => data.pieces.find((p) => p.id === id)?.date ?? data.timeline.find((e) => e.sources.some((s) => s.pieceId === id))?.date ?? null;
+const group = (id: string) => (/CONTRAT|NOTIF|MISE|REPONSE/.test(id) ? 0 : /FACTURE/.test(id) ? 1 : 2);
+const columns = ["Contrat et courriers", "Factures", "Preuves et échanges"];
+
+// Deterministic pseudo-random so the pile is identical on every build.
+const rand = (i: number, k: number) => { const x = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return x - Math.floor(x); };
+const sorted = [...pieces].sort((a, b) => (dateOf(a.id) ?? "9").localeCompare(dateOf(b.id) ?? "9"));
+const colIndex = new Map<string, number>();
+const cards = pieces.map((p, i) => {
+  const g = group(p.id);
+  const k = colIndex.get(String(g)) ?? 0; colIndex.set(String(g), k + 1);
+  const order = sorted.indexOf(p);
+  const t0 = `translate3d(${(rand(i, 1) * 26 - 13).toFixed(1)}cqw, ${(rand(i, 2) * 16 - 8 - i * 0.6).toFixed(1)}cqw, ${i * 3}px) rotate(${(rand(i, 3) * 40 - 20).toFixed(1)}deg)`;
+  const t1 = `translate3d(${(g - 1) * 32}cqw, ${(-18 + k * 8).toFixed(1)}cqw, ${k * 4}px) rotate(0deg)`;
+  const col = order % 4, row = Math.floor(order / 4);
+  const t2 = `translate3d(${(-36 + col * 24).toFixed(1)}cqw, ${(-17 + row * 17).toFixed(1)}cqw, 0px) rotate(0deg) scale(0.74)`;
+  return { id: p.id, kind: pieceKind(p.id), date: dateOf(p.id), t0, t1, t2, i };
+});
+const steps = [
+  { n: "01", title: "Vous déposez tout, en vrac", text: "Contrats, factures, courriers, extractions : la pile telle qu'elle arrive au cabinet." },
+  { n: "02", title: "Chaque pièce est identifiée et classée", text: "Type, date, parties : le dossier se range sans que vous renommiez un seul fichier." },
+  { n: "03", title: "Les faits sont datés et reliés", text: "Les pièces s'ordonnent en chronologie, d'où sortent délais, SWOT et position." },
+  { n: "04", title: "Chaque affirmation est vérifiée", text: "Un second agent relit chaque élément contre la pièce qu'il cite avant que vous ne le voyiez. Cette étape est en cours de développement." },
+];
+---
+<div class="pile" data-pile>
+  <ol class="steps">
+    {steps.map((s, i) => (
+      <li data-pile-step={i}>
+        <p class="n">{s.n}</p>
+        <h3>{s.title}</h3>
+        <p class="muted">{s.text}</p>
+      </li>
+    ))}
+  </ol>
+  <div class="sticky">
+    <div class="stage" aria-hidden="true">
+      <div class="cols">{columns.map((c, i) => <span style={`--c:${i}`}>{c}</span>)}</div>
+      <div class="scene" data-pile-scene>
+        {cards.map((c) => (
+          <div class="card" style={`--t0:${c.t0};--t1:${c.t1};--t2:${c.t2};--i:${c.i}`}>
+            <span class="kind">{c.kind}</span>
+            <span class="date mono">{c.date ? shortDate(c.date) : "non datée"}</span>
+            <span class="lines"><i></i><i></i><i></i></span>
+            <span class="ok"></span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pile { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+  @media (min-width: 900px) { .pile { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-8); } }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); order: 2; }
+  @media (min-width: 900px) {
+    .steps { order: 0; gap: 0; }
+    .steps li { min-height: 62vh; display: flex; flex-direction: column; justify-content: center; }
+  }
+  .steps li { min-height: 38vh; border-left: 2px solid var(--color-line); padding-left: var(--space-5); transition: border-color var(--dur-2) var(--ease-out); }
+  .steps li[data-active="true"] { border-color: var(--color-accent); }
+  .n { font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-accent); margin-bottom: var(--space-2); }
+  .sticky { position: sticky; top: 12px; align-self: start; z-index: 1; }
+  @media (min-width: 900px) { .sticky { top: 14vh; } }
+  .stage { container-type: inline-size; position: relative; aspect-ratio: 10 / 7.4; perspective: 1400px; background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-2); overflow: hidden; }
+  .cols { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); padding: 3cqw; font-size: max(10px, 1.7cqw); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); opacity: 0; text-align: center; }
+  .scene { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateX(0deg); }
+  .card {
+    position: absolute; left: 50%; top: 50%; width: 27cqw; height: 15cqw; margin: -7.5cqw 0 0 -13.5cqw;
+    display: grid; grid-template-rows: auto auto 1fr; gap: 0.6cqw; padding: 1.6cqw 1.9cqw;
+    background: var(--color-paper); border: 1px solid #D9D3C7; border-radius: 1cqw;
+    box-shadow: 0 1.2cqw 2.4cqw -1cqw rgba(18, 22, 29, 0.35);
+    transform: var(--t2);
+  }
+  .kind { font-family: var(--font-serif); font-size: max(10px, 2.3cqw); line-height: 1.1; }
+  .date { font-size: max(9px, 1.5cqw); color: var(--color-muted); }
+  .lines { display: grid; gap: 0.8cqw; align-content: end; }
+  .lines i { display: block; height: 0.5cqw; background: #E2DDD3; border-radius: 1px; }
+  .lines i:nth-child(2) { width: 80%; }
+  .lines i:nth-child(3) { width: 55%; }
+  .ok { position: absolute; right: 1.4cqw; top: 1.4cqw; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: var(--color-success); }
+  .ok::after { content: ""; position: absolute; left: 0.95cqw; top: 0.5cqw; width: 0.6cqw; height: 1.2cqw; border: solid #fff; border-width: 0 0.35cqw 0.35cqw 0; transform: rotate(45deg); }
+
+  .pile[data-state="0"] .scene { transform: rotateX(52deg) rotateZ(-6deg) translateY(4cqw); }
+  .pile[data-state="0"] .card { transform: var(--t0); }
+  .pile[data-state="1"] .scene { transform: rotateX(28deg) translateY(2cqw); }
+  .pile[data-state="1"] .card { transform: var(--t1); }
+  .pile[data-state="1"] .cols { opacity: 1; }
+  .pile[data-state="0"] .ok, .pile[data-state="1"] .ok, .pile[data-state="2"] .ok { transform: scale(0); }
+
+  :global([data-motion="ok"]) .scene, :global([data-motion="ok"]) .card { transition: transform 900ms var(--ease-out); }
+  :global([data-motion="ok"]) .card { transition-delay: calc(var(--i) * 25ms); }
+  :global([data-motion="ok"]) .ok { transition: transform 400ms var(--ease-out); transition-delay: calc(var(--i) * 70ms); }
+  :global([data-motion="ok"]) .cols { transition: opacity 400ms var(--ease-out); }
+</style>

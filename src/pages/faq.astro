@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import Faq from "../components/Faq.astro";
+import Button from "../components/Button.astro";
+import { faq, faqJsonLd } from "../data/faq";
+---
+<Base
+  title="Questions fréquentes"
+  description="Ce que les avocats nous demandent sur LegalVec : sources et vérification, hébergement en France, secret professionnel, RGPD, assistant supervisé, types de dossiers."
+  path="/faq/"
+  jsonLd={[faqJsonLd(faq)]}
+>
+  <section class="container head">
+    <p class="kicker">Questions fréquentes</p>
+    <h1>Ce que les avocats nous demandent</h1>
+    <p class="lede muted">Des réponses courtes et exactes, y compris sur ce qui n'est pas encore construit.</p>
+  </section>
+  <Section>
+    <Faq items={faq} />
+  </Section>
+  <Section tone="ink">
+    <h2>Une question qui n'est pas ici ?</h2>
+    <p class="muted">Écrivez-nous, nous répondons nous-mêmes.</p>
+    <Button href="/contact/">Nous écrire</Button>
+  </Section>
+</Base>
+
+<style>
+  .head { padding-top: var(--space-8); }
+  .lede { font-size: var(--step-1); }
+</style>

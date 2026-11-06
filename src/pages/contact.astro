@@ -1,0 +1,123 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../config/site";
+import { SUBJECTS, SIZES, MESSAGE_MIN, contactSubmitMode } from "../lib/contact-form";
+const mode = contactSubmitMode(site.contactFormEndpoint);
+---
+<Base
+  title="Nous contacter"
+  description="Écrivez à l'équipe LegalVec : demande de démonstration, avis sur le dossier de démonstration ou question sur la sécurité des données."
+  path="/contact/"
+>
+  <section class="container page">
+    <div class="intro">
+      <p class="kicker">Contact</p>
+      <h1>Parlons de vos dossiers</h1>
+      <p class="lede muted">Une démonstration, un avis de praticien, une question sur l'hébergement ou le secret professionnel : écrivez-nous, nous répondons nous-mêmes.</p>
+      <ul class="facts">
+        <li><strong>Pas de démarchage.</strong> Vos coordonnées servent uniquement à vous répondre.</li>
+        <li><strong>Aucune pièce de dossier ici.</strong> N'indiquez dans ce formulaire aucune information couverte par le secret professionnel.</li>
+        <li><strong>Trente minutes suffisent</strong> pour parcourir le dossier de démonstration ensemble.</li>
+      </ul>
+    </div>
+
+    <form class="form" id="formulaire" data-contact-form data-mode={mode} action={mode === "send" ? site.contactFormEndpoint : undefined} method="post" novalidate>
+      <div class="row2">
+        <div class="field">
+          <label for="nom">Nom et prénom</label>
+          <input id="nom" name="nom" autocomplete="name" required aria-describedby="nom-err" />
+          <p class="err" id="nom-err" data-err="nom"></p>
+        </div>
+        <div class="field">
+          <label for="cabinet">Cabinet</label>
+          <input id="cabinet" name="cabinet" autocomplete="organization" required aria-describedby="cabinet-err" />
+          <p class="err" id="cabinet-err" data-err="cabinet"></p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="email">Adresse électronique professionnelle</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err" />
+          <p class="err" id="email-err" data-err="email"></p>
+        </div>
+        <div class="field">
+          <label for="telephone">Téléphone <span class="opt">(facultatif)</span></label>
+          <input id="telephone" name="telephone" type="tel" autocomplete="tel" aria-describedby="telephone-err" />
+          <p class="err" id="telephone-err" data-err="telephone"></p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="objet">Objet</label>
+          <select id="objet" name="objet" aria-describedby="objet-err">
+            {Object.entries(SUBJECTS).map(([v, l]) => <option value={v}>{l}</option>)}
+          </select>
+          <p class="err" id="objet-err" data-err="objet"></p>
+        </div>
+        <div class="field">
+          <label for="taille">Taille du cabinet <span class="opt">(facultatif)</span></label>
+          <select id="taille" name="taille">
+            {Object.entries(SIZES).map(([v, l]) => <option value={v} selected={v === ""}>{l}</option>)}
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required minlength={MESSAGE_MIN} aria-describedby="message-err"></textarea>
+        <p class="err" id="message-err" data-err="message"></p>
+      </div>
+      <div class="field check">
+        <input id="consentement" name="consentement" type="checkbox" required aria-describedby="consentement-err" />
+        <label for="consentement">J'accepte que LegalVec utilise ces informations pour me répondre. Voir la <a href="/confidentialite/">politique de confidentialité</a>.</label>
+        <p class="err" id="consentement-err" data-err="consentement"></p>
+      </div>
+      <div class="actions">
+        <button type="submit" data-contact-submit disabled>Envoyer</button>
+        <noscript><p class="muted small">Le formulaire nécessite JavaScript.</p></noscript>
+      </div>
+      <div class="status" data-contact-status role="status" aria-live="polite" hidden></div>
+      {mode === "disabled" && (
+        <p class="notice small">L'envoi en ligne n'est pas encore activé : aucun message n'est transmis ni enregistré depuis ce formulaire pour le moment.</p>
+      )}
+    </form>
+  </section>
+</Base>
+
+<script>
+  import { initContactForm } from "../scripts/contact-form";
+  initContactForm();
+</script>
+
+<style>
+  .page { display: grid; gap: var(--space-7); padding-block: var(--space-8); grid-template-columns: 1fr; }
+  @media (min-width: 960px) { .page { grid-template-columns: 0.85fr 1.15fr; align-items: start; } }
+  .lede { font-size: var(--step-1); }
+  .facts { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: grid; gap: var(--space-4); }
+  .facts li { border-top: 1px solid var(--color-line); padding-top: var(--space-3); color: var(--color-muted); }
+  .facts strong { color: var(--color-ink); font-weight: 600; display: block; }
+  .form { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-2); padding: var(--space-6); display: grid; gap: var(--space-4); min-width: 0; }
+  .row2 { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .row2 { grid-template-columns: 1fr 1fr; } }
+  .field { display: grid; gap: var(--space-1); min-width: 0; }
+  label { font-size: var(--step--1); font-weight: 500; }
+  .opt { color: var(--color-muted); font-weight: 400; }
+  input, select, textarea {
+    font: inherit; color: var(--color-ink); background: var(--color-paper); width: 100%; min-width: 0;
+    border: 1px solid #CFC8BA; border-radius: var(--radius-1); padding: 0.6em 0.75em;
+  }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+  [aria-invalid="true"] { border-color: var(--color-danger); }
+  .check { grid-template-columns: auto 1fr; align-items: start; column-gap: var(--space-3); }
+  .check input { width: 18px; height: 18px; margin-top: 0.2em; }
+  .check .err { grid-column: 2; }
+  .err { margin: 0; font-size: var(--step--1); color: var(--color-danger); min-height: 0; }
+  .err:empty { display: none; }
+  .actions { display: flex; align-items: center; gap: var(--space-4); }
+  button[type="submit"] { font: inherit; font-weight: 500; padding: 0.7em 1.4em; border: 0; border-radius: var(--radius-1); background: var(--color-accent); color: var(--color-accent-ink); cursor: pointer; }
+  button[type="submit"]:hover { background: var(--color-ink); }
+  button[disabled] { opacity: 0.5; cursor: not-allowed; }
+  .status { border-left: 2px solid var(--color-accent); padding: var(--space-3) var(--space-4); background: var(--color-accent-soft); }
+  .status p { margin: 0; }
+  .notice { color: var(--color-muted); margin: 0; }
+  .small { font-size: var(--step--1); }
+</style>

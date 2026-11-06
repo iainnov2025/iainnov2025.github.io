@@ -4,45 +4,67 @@ import Section from "../components/Section.astro";
 import Button from "../components/Button.astro";
 import SourceChip from "../components/SourceChip.astro";
 import PieceList from "../components/PieceList.astro";
-import HeroSequence from "../components/home/HeroSequence.astro";
 import Commitments from "../components/Commitments.astro";
+import Faq from "../components/Faq.astro";
+import AppDashboard from "../components/dashboard/AppDashboard.astro";
+import PileToCase from "../components/home/PileToCase.astro";
 import demo from "../data/demo/genbio.json";
 import type { DemoCase } from "../data/demo/types";
+import { faq, faqJsonLd } from "../data/faq";
 
 const d = demo as DemoCase;
-const cited = ["01_CONTRAT_CADRE_DISTRIBUTION_GENBIO_CDS_20180315", "07_MISE_EN_DEMEURE_GENBIO_20230612", "24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802"];
-const citedPieces = d.pieces.filter((p) => cited.includes(p.id));
+const homeFaq = faq.filter((f) => f.home);
 
 const pains = [
   { title: "Trop de pièces, trop peu de temps", text: "Chaque dossier accumule contrats, factures, correspondances et conclusions qu'il faut lire, trier et relier avant de pouvoir construire une stratégie." },
   { title: "La peur du délai oublié", text: "Une échéance noyée dans un courrier ou une mise en demeure peut coûter cher. Humainement, cela arrive." },
   { title: "Une IA qui invente", text: "Un résumé qui avance un fait ou une date sans pouvoir dire d'où ils viennent n'a pas sa place dans un dossier." },
 ];
-const steps = [
-  { n: "01", title: "Vous déposez vos pièces", text: "Contrats, factures, correspondances, actes de procédure, dans les formats que vous utilisez déjà." },
-  { n: "02", title: "LegalVec structure et vérifie", text: "Chronologie, délais, position, SWOT et arguments sont extraits des pièces ; chaque affirmation est contrôlée contre la pièce qu'elle cite." },
-  { n: "03", title: "Vous obtenez un dossier prêt à relire", text: "Un tableau de bord par dossier, où chaque élément s'ouvre sur sa source. Vous corrigez, vous décidez." },
+const features = [
+  { k: "Chronologie", title: "Tous les faits, datés et sourcés", text: "Les événements extraits des pièces, classés, chacun relié au document qui l'établit." },
+  { k: "Délais", title: "Aucune échéance noyée", text: "Délais contractuels et procéduraux avec leur fondement et la pièce d'où ils viennent." },
+  { k: "SWOT et position", title: "Une lecture stratégique, pièces à l'appui", text: "Atouts, faiblesses, menaces et opportunités, avec une action proposée pour chacun." },
+  { k: "Assistant", title: "Il propose, vous validez", text: "Posez vos questions sur le dossier ouvert. L'assistant cite ses sources et ne fait rien sans votre accord." },
 ];
 ---
 <Base
   title="LegalVec — l'analyse de dossiers de contentieux, pièces à l'appui"
   description="LegalVec structure vos dossiers de contentieux commercial : chronologie, délais, SWOT, arguments. Chaque affirmation est reliée à la pièce qui la fonde."
   path="/"
+  jsonLd={[faqJsonLd(homeFaq)]}
 >
   <section class="hero">
     <div class="container">
-      <p class="kicker">Pour les cabinets de contentieux des affaires</p>
-      <h1>Vos dossiers de contentieux, analysés avec les pièces à l'appui.</h1>
-      <p class="lede">Chaque affirmation est reliée à la pièce qui la fonde. Vous restez décisionnaire.</p>
-      <div class="ctas">
-        <Button href="/dossier-de-demonstration/">Explorer le dossier de démonstration</Button>
-        <Button href="/donnez-votre-avis/" variant="secondary">Donner votre avis (30 min)</Button>
+      <div class="hero-copy">
+        <div class="hero-title">
+          <p class="kicker">Pour les cabinets de contentieux des affaires</p>
+          <h1>Vos dossiers de contentieux, analysés avec les pièces à l'appui.</h1>
+        </div>
+        <div class="hero-side">
+        <p class="lede">Un tableau de bord par dossier : chronologie, délais, SWOT et position. Chaque affirmation est reliée à la pièce qui la fonde. Vous restez décisionnaire.</p>
+        <div class="ctas">
+          <Button href="/dossier-de-demonstration/">Explorer le dossier de démonstration</Button>
+          <Button href="/contact/" variant="secondary">Nous contacter</Button>
+        </div>
+        <ul class="trust">
+          <li>Hébergement prévu en France</li>
+          <li>Aucune société américaine dans la chaîne</li>
+          <li>Aucune affirmation sans sa pièce</li>
+        </ul>
+        </div>
       </div>
-      <HeroSequence data={d} />
+      <div class="hero-visual">
+        <AppDashboard data={d} />
+        <p class="caption">Aperçu de l'interface sur le dossier de démonstration, fictif. Les analyses affichées ont été vérifiées à la main ; la vérification automatique et l'assistant sont en cours de développement. Cliquez sur les onglets et sur les pièces.</p>
+      </div>
     </div>
   </section>
 
-  <Section kicker="Le constat" title="Trois frictions qui ralentissent chaque dossier">
+  <Section kicker="Comment ça fonctionne" title="De la pile de pièces au dossier structuré">
+    <PileToCase data={d} />
+  </Section>
+
+  <Section kicker="Le constat" title="Trois frictions qui ralentissent chaque dossier" tone="surface">
     <div class="cols" data-reveal>
       {pains.map((p, i) => (
         <div class="col" style={`--i:${i}`}>
@@ -53,19 +75,20 @@ const steps = [
     </div>
   </Section>
 
-  <Section kicker="Comment ça fonctionne" title="Trois étapes, sans changer vos habitudes" tone="surface">
-    <ol class="steps" data-reveal>
-      {steps.map((s, i) => (
-        <li style={`--i:${i}`}>
-          <p class="num">{s.n}</p>
-          <h3>{s.title}</h3>
-          <p class="muted">{s.text}</p>
-        </li>
+  <Section kicker="Le tableau de bord" title="Tout le dossier sur un écran, un assistant à côté">
+    <div class="features" data-reveal>
+      {features.map((f, i) => (
+        <div class="feature" style={`--i:${i}`}>
+          <p class="f-k">{f.k}</p>
+          <h3>{f.title}</h3>
+          <p class="muted">{f.text}</p>
+        </div>
       ))}
-    </ol>
+    </div>
+    <p class="more"><a href="/produit/">Le détail des analyses</a></p>
   </Section>
 
-  <Section kicker="La preuve, pas la promesse" title="Cliquez sur une affirmation : la pièce s'ouvre">
+  <Section kicker="La preuve, pas la promesse" title="Cliquez sur une affirmation : la pièce s'ouvre" tone="surface">
     <div class="proof">
       <p class="claim">La mise en demeure du 12 juin 2023 laisse quinze jours pour régulariser, soit jusqu'au 27 juin 2023. <SourceChip pieceId="07_MISE_EN_DEMEURE_GENBIO_20230612" /></p>
       <p class="claim">La note interne du 2 août 2023 indique que les connexions depuis Madrid semblent correspondre à des activités de recherche légitimes. <SourceChip pieceId="24_NOTE_INTERNE_GENBIO_AUDIT_ESPAGNE_20230802" /></p>
@@ -73,43 +96,68 @@ const steps = [
     </div>
   </Section>
 
-  <Section kicker="Confidentialité" title="Pensé pour le secret professionnel" tone="surface">
+  <Section kicker="Confidentialité" title="Pensé pour le secret professionnel">
     <Commitments ids={["hebergement-france", "cloud-act", "entrainement", "supervision"]} />
     <p class="more"><a href="/securite/">Tous nos engagements et leur état d'avancement</a></p>
+  </Section>
+
+  <Section kicker="Questions fréquentes" title="Ce que les avocats nous demandent" tone="surface">
+    <Faq items={homeFaq} />
+    <p class="more"><a href="/faq/">Toutes les questions</a></p>
   </Section>
 
   <Section tone="ink">
     <div class="final">
       <h2>Voyez ce que LegalVec fait d'un dossier complet</h2>
-      <p class="muted">Un dossier fictif de contentieux commercial, analysé et consultable sans inscription. Nous construisons LegalVec avec des avocats : votre regard de praticien nous intéresse.</p>
+      <p class="muted">Un dossier fictif de contentieux commercial, analysé et consultable sans inscription. Nous voulons construire LegalVec avec des avocats : votre regard de praticien nous intéresse.</p>
       <div class="ctas">
         <Button href="/dossier-de-demonstration/">Explorer le dossier de démonstration</Button>
-        <Button href="/donnez-votre-avis/" variant="secondary">Donner votre avis (30 min)</Button>
+        <Button href="/contact/?objet=avis" variant="secondary">Donner votre avis (30 min)</Button>
       </div>
     </div>
   </Section>
 
   <div class="container cited">
-    <PieceList pieces={citedPieces} heading="Pièces citées sur cette page" />
+    <PieceList pieces={d.pieces} heading="Pièces du dossier de démonstration" />
   </div>
 </Base>
 
 <script>
   import { initReveal } from "../scripts/reveal";
+  import { initDashboard } from "../scripts/dashboard";
+  import { initPile } from "../scripts/pile";
   initReveal();
+  initDashboard();
+  initPile();
 </script>
 
 <style>
-  .hero { padding-block: var(--space-8) var(--space-7); }
-  .hero h1 { max-width: 18ch; }
-  .lede { font-size: var(--step-1); color: var(--color-muted); max-width: 46ch; }
-  .ctas { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-6) var(--space-7); }
+  .hero { background: var(--color-ink); color: var(--color-paper); padding-block: var(--space-8) var(--space-8); overflow: hidden; }
+  .hero .kicker { color: #8FBFB0; }
+  .hero h1 { max-width: 17ch; margin: 0; }
+  .hero-copy { display: grid; gap: var(--space-5); margin-bottom: var(--space-8); }
+  @media (min-width: 1000px) {
+    .hero-copy { grid-template-columns: 1.25fr 1fr; gap: var(--space-8); align-items: end; }
+    .hero h1 { font-size: clamp(2.6rem, 1.2rem + 3vw, 4.1rem); }
+  }
+  .lede { font-size: var(--step-0); color: #C9CDD2; max-width: 52ch; margin: 0; }
+  .hero :global(.secondary) { color: var(--color-paper); border-color: #6B7079; }
+  .hero :global(.secondary:hover) { background: var(--color-paper); color: var(--color-ink); }
+  .hero :global(.primary:hover) { background: var(--color-paper); color: var(--color-ink); }
+  .ctas { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-5); }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); font-size: var(--step--1); color: #AEB3BA; }
+  .trust li { display: inline-flex; align-items: center; gap: var(--space-2); }
+  .trust li::before { content: ""; width: 6px; height: 6px; background: #8FBFB0; }
+  .hero-visual { position: relative; }
+  .caption { font-size: var(--step--1); color: #AEB3BA; margin: var(--space-5) auto 0; text-align: center; max-width: 80ch; }
+
   .cols { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
   @media (min-width: 900px) { .cols { grid-template-columns: repeat(3, 1fr); } }
   .col { border-top: 1px solid var(--color-ink); padding-top: var(--space-4); }
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
-  @media (min-width: 900px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-  .num { font-family: var(--font-serif); font-size: var(--step-3); color: var(--color-accent); margin-bottom: var(--space-2); }
+  .features { display: grid; gap: 1px; grid-template-columns: 1fr; background: var(--color-line); border: 1px solid var(--color-line); border-radius: var(--radius-2); overflow: hidden; }
+  @media (min-width: 760px) { .features { grid-template-columns: 1fr 1fr; } }
+  .feature { background: var(--color-surface); padding: var(--space-6); }
+  .f-k { font-family: var(--font-mono); font-size: var(--step--1); color: var(--color-accent); margin-bottom: var(--space-3); }
   .proof { display: grid; gap: var(--space-4); max-width: 72ch; }
   .claim { font-family: var(--font-serif); font-size: var(--step-1); line-height: 1.45; margin: 0; }
   .final { max-width: 60ch; }

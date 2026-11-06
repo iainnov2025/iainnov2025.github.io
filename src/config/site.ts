@@ -11,6 +11,8 @@ export interface SiteConfig {
   contactEmail: string;
   /** Self-hosted booking page (Cal.com) once it exists; null → mailto fallback. */
   bookingUrl: string | null;
+  /** HTTPS endpoint the contact form posts to (EU-hosted form backend); null → the form sends nothing. */
+  contactFormEndpoint: string | null;
   /** v2 app demo case once it exists; null → static preview page. */
   demoAppUrl: string | null;
   /** Self-hosted analytics script (Plausible CE / Umami); null → no script at all. */
@@ -28,6 +30,7 @@ export const site: SiteConfig = {
   publisherAddress: "",
   contactEmail: "",
   bookingUrl: null,
+  contactFormEndpoint: null,
   demoAppUrl: null,
   analyticsScriptUrl: null,
   features: { relevanceFlags: false },

@@ -41,3 +41,9 @@ Status on 2026-11-06: built, tested, deployed at https://iainnov2025.github.io i
 - Custom domain: add `public/CNAME` with `legalvec.com`, set `siteUrl`, configure DNS, enable HTTPS.
 - Security page: switch statements to `verified` only with written vendor evidence.
 - Product page « Bientôt » badges: remove as each v2 feature ships (`features.relevanceFlags` etc.).
+
+## Formulaire de contact
+
+- [ ] Choisir un service de réception de formulaires hébergé dans l'UE, sans société américaine (ou un petit point de réception sur le VPS une fois en place).
+- [ ] Renseigner `contactFormEndpoint` (URL https) dans `src/config/site.ts` : le formulaire de `/contact/` enverra alors réellement. Tant que la valeur est `null`, rien n'est transmis.
+- [ ] Compléter la politique de confidentialité : finalité (répondre à la demande), durée de conservation, destinataire, droits.
