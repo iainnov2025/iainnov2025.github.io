@@ -7,7 +7,8 @@ Every correction below was checked against the cited piece.
 ## Why this matters
 
 On its own test case, the v1 run produced **12 wrong or unsupported facts among 23 timeline events**
-(10 wrong dates, 1 inverted meaning, 1 unsupported event), **2 mis-sourced events, 1 wrong legal basis
+(9 wrong dates; 1 wrong date whose meaning was also inverted; 1 hearing mislabelled as a filing;
+1 unsupported event), **2 mis-sourced events, 1 wrong legal basis
 and 2 mis-sourced SWOT items**. Nothing here was visible to v1's citation check, because it only
 verified that a cited file existed. This is the strongest argument for the v2 verifier agent and the
 timeline/deadline eval suites (spec 04 §4.3).
