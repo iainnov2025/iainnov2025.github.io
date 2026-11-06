@@ -1,0 +1,62 @@
+---
+import "../styles/base.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PieceDialog from "../components/PieceDialog.astro";
+import { site } from "../config/site";
+import { robotsMeta } from "../lib/site-config";
+import { canonical, organizationJsonLd } from "../lib/seo";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  jsonLd?: object[];
+  noindex?: boolean;
+}
+const { title, description, path, ogImage, jsonLd = [], noindex = false } = Astro.props;
+const url = canonical(site, path);
+const robots = noindex ? "noindex, nofollow" : robotsMeta(site);
+const fullTitle = path === "/" ? title : `${title} — LegalVec`;
+const ld = [organizationJsonLd(site), ...jsonLd];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#12161D" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="LegalVec" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, site.siteUrl).href} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title="Blog LegalVec" href="/rss.xml" />
+    {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+    {site.analyticsScriptUrl && <script defer src={site.analyticsScriptUrl} data-domain={new URL(site.siteUrl).host}></script>}
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+    <Header path={path} />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+    <PieceDialog />
+    <style is:global>
+      .skip { position: absolute; left: -999px; top: 0; background: var(--color-ink); color: var(--color-paper); padding: var(--space-2) var(--space-4); z-index: 10; }
+      .skip:focus { left: var(--space-4); }
+    </style>
+  </body>
+</html>

@@ -1,20 +1,6 @@
 ---
-import { site } from "../config/site";
-import { robotsMeta } from "../lib/site-config";
+import Base from "../layouts/Base.astro";
 ---
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content={robotsMeta(site)} />
-    <title>LegalVec — bientôt</title>
-    <meta name="description" content="LegalVec, l'analyse de dossiers de contentieux avec les pièces à l'appui." />
-  </head>
-  <body>
-    <main>
-      <h1>LegalVec</h1>
-      <p>Bientôt.</p>
-    </main>
-  </body>
-</html>
+<Base title="LegalVec — l'analyse de dossiers de contentieux, pièces à l'appui" description="LegalVec analyse vos dossiers de contentieux commercial et relie chaque affirmation à la pièce qui la fonde." path="/">
+  <div class="container"><h1>LegalVec</h1><p>Bientôt.</p></div>
+</Base>

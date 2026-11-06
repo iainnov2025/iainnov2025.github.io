@@ -26,7 +26,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      # Built-site checks, e2e and Lighthouse are added as their tests land (Tasks 3, 10).
+      - run: npm run test:built
+      # e2e and Lighthouse are added in Task 10.
 
   deploy:
     needs: test

@@ -1,0 +1,37 @@
+---
+import { site } from "../config/site";
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container grid">
+    <div>
+      <p class="name">LegalVec</p>
+      <p class="muted">Analyse de dossiers de contentieux, avec les pièces à l'appui. Projet français en cours de construction avec des avocats.</p>
+    </div>
+    <nav aria-label="Informations légales">
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/cgu/">Conditions d'utilisation</a>
+      <a href="/confidentialite/">Confidentialité</a>
+      <a href="/cookies/">Cookies</a>
+    </nav>
+    <nav aria-label="Contact">
+      <a href="/donnez-votre-avis/">Donner votre avis</a>
+      <a href="/rendez-vous/">Prendre rendez-vous</a>
+      {site.contactEmail && <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>}
+      <a href="/rss.xml">Flux RSS du blog</a>
+    </nav>
+  </div>
+  <div class="container small muted">
+    <p>Site vitrine : aucune donnée client n'est collectée. © {year} LegalVec.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--color-line); margin-top: var(--space-9); padding-block: var(--space-7) var(--space-5); }
+  .grid { display: grid; gap: var(--space-6); grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .grid { grid-template-columns: 2fr 1fr 1fr; } }
+  .name { font-family: var(--font-serif); font-size: var(--step-1); margin-bottom: var(--space-2); }
+  nav { display: flex; flex-direction: column; gap: var(--space-2); }
+  nav a { color: var(--color-ink); font-size: var(--step--1); }
+  .small { font-size: var(--step--1); margin-top: var(--space-6); }
+</style>

@@ -1,0 +1,49 @@
+---
+import logo from "../brand/logo.svg?raw";
+interface Props { path: string }
+const { path } = Astro.props;
+const links = [
+  { href: "/produit/", label: "Produit" },
+  { href: "/dossier-de-demonstration/", label: "Dossier de démonstration" },
+  { href: "/securite/", label: "Sécurité" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/a-propos/", label: "À propos" },
+];
+const current = (href: string) => (path.startsWith(href) ? "page" : undefined);
+---
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="LegalVec — accueil" set:html={logo} />
+    <nav class="desktop" aria-label="Navigation principale">
+      {links.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+      <a class="cta" href="/donnez-votre-avis/">Donner votre avis</a>
+    </nav>
+    <details class="mobile">
+      <summary>Menu</summary>
+      <nav aria-label="Navigation mobile">
+        {links.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+        <a class="cta" href="/donnez-votre-avis/">Donner votre avis</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header { border-bottom: 1px solid var(--color-line); background: var(--color-paper); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 68px; }
+  .brand { display: inline-flex; color: var(--color-ink); }
+  .brand :global(svg) { height: 30px; width: auto; display: block; }
+  nav a { color: var(--color-ink); text-decoration: none; font-size: var(--step--1); font-weight: 500; }
+  nav a:hover, nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 1px; }
+  .cta { padding: var(--space-2) var(--space-4); border: 1px solid var(--color-ink); border-radius: var(--radius-1); }
+  .cta:hover { background: var(--color-ink); color: var(--color-paper); text-decoration: none; }
+  .desktop { display: none; gap: var(--space-5); align-items: center; }
+  .mobile summary { cursor: pointer; font-size: var(--step--1); font-weight: 500; padding: var(--space-2) var(--space-3); border: 1px solid var(--color-line); border-radius: var(--radius-1); list-style: none; }
+  .mobile summary::-webkit-details-marker { display: none; }
+  .mobile nav { position: absolute; left: 0; right: 0; background: var(--color-paper); border-bottom: 1px solid var(--color-line); display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5) 1rem; z-index: 5; }
+  .mobile { position: static; }
+  @media (min-width: 900px) {
+    .desktop { display: flex; }
+    .mobile { display: none; }
+  }
+</style>

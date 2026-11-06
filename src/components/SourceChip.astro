@@ -1,0 +1,20 @@
+---
+/** Link to a piece in the page's PieceList; PieceDialog turns it into a dialog when JS runs. */
+interface Props { pieceId: string; label?: string }
+const { pieceId, label = pieceId } = Astro.props;
+---
+<a class="chip mono" href={`#piece-${pieceId}`} data-piece-id={pieceId}>
+  <span aria-hidden="true" class="tick"></span>{label}
+</a>
+
+<style>
+  .chip {
+    display: inline-flex; align-items: baseline; gap: 0.4em; max-width: 100%;
+    font-size: 0.78rem; line-height: 1.35; padding: 0.2em 0.55em;
+    border: 1px solid var(--color-line); border-radius: var(--radius-1);
+    background: var(--color-surface); color: var(--color-ink); text-decoration: none;
+    overflow-wrap: anywhere; word-break: break-word;
+  }
+  .chip:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .tick { width: 0.45em; height: 0.45em; background: var(--color-accent); flex: none; transform: translateY(-0.1em); }
+</style>

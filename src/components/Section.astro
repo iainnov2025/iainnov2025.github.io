@@ -1,0 +1,19 @@
+---
+interface Props { kicker?: string; title?: string; id?: string; tone?: "paper" | "surface" | "ink" }
+const { kicker, title, id, tone = "paper" } = Astro.props;
+---
+<section id={id} class:list={["section", tone]}>
+  <div class="container">
+    {kicker && <p class="kicker">{kicker}</p>}
+    {title && <h2>{title}</h2>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section { padding-block: var(--space-8); }
+  .surface { background: var(--color-surface); border-block: 1px solid var(--color-line); }
+  .ink { background: var(--color-ink); color: var(--color-paper); }
+  .ink :global(.kicker), .ink :global(.muted) { color: #B9BDC3; }
+  .ink :global(a) { color: var(--color-paper); }
+</style>

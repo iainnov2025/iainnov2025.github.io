@@ -1,0 +1,27 @@
+---
+/** On-page list of pieces: the no-JS target of SourceChip links and the dialog's content source. */
+export interface PieceItem { id: string; title: string; text: string; date?: string | null }
+interface Props { pieces: PieceItem[]; heading?: string }
+const { pieces, heading = "Pièces du dossier" } = Astro.props;
+---
+<section class="pieces" aria-labelledby="pieces-title">
+  <h2 id="pieces-title">{heading}</h2>
+  <ol>
+    {pieces.map((p) => (
+      <li id={`piece-${p.id}`} data-piece-title={p.title}>
+        <details>
+          <summary><span class="mono">{p.id}</span>{p.date && <span class="muted"> · {p.date}</span>}</summary>
+          <pre class="piece-text">{p.text}</pre>
+        </details>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .pieces ol { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); }
+  .pieces li { border: 1px solid var(--color-line); background: var(--color-surface); border-radius: var(--radius-1); padding: var(--space-3) var(--space-4); scroll-margin-top: var(--space-6); }
+  .pieces li:target { border-color: var(--color-accent); }
+  summary { cursor: pointer; font-size: var(--step--1); }
+  .piece-text { white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.55; max-height: 28rem; overflow: auto; margin: var(--space-3) 0 0; }
+</style>
