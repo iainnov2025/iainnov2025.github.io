@@ -13,10 +13,11 @@
     "test": "vitest run tests/unit",
     "test:built": "vitest run tests/built",
     "test:e2e": "playwright test",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun --config=lighthouserc.cjs"
   },
   "devDependencies": {
     "@fontsource/newsreader": "^5.3.0",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.65.0",
     "@resvg/resvg-js": "^2.6.2",
     "node-html-parser": "^9.0.6",

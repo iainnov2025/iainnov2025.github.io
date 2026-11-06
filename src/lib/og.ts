@@ -13,7 +13,7 @@ const LOGO_W = Math.round((vbW / vbH) * LOGO_H);
 
 /** French typography + keep article references together ("L. 442-1", "art. 66-5"). */
 export function ogTitle(t: string): string {
-  return fixFrenchTypography(t).replace(/\b(L|R|art)\. (?=\d)/g, "$1.\u00A0");
+  return fixFrenchTypography(t);
 }
 
 /** 1200×630 Open Graph card (satori is content-box: root size excludes its 80/72px padding) in the brand: ink background, serif title, small kicker, logo. */

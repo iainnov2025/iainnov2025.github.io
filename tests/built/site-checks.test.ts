@@ -42,6 +42,11 @@ describe("built site", () => {
       const expected = /brand-preview/.test(file) ? "noindex, nofollow" : robotsMeta(site);
       expect(root.querySelector('meta[name="robots"]')?.getAttribute("content")).toBe(expected);
     });
+    it("never skips a heading level", () => {
+      const levels = root.querySelectorAll("h1, h2, h3, h4, h5, h6").map((h) => Number(h.tagName[1]));
+      const skips = levels.filter((l, i) => i > 0 && l > levels[i - 1] + 1);
+      expect(skips).toEqual([]);
+    });
     it("contains no banned copy", () => expect(findBanned(text)).toEqual([]));
     it("follows French typography", () => expect(frenchTypoViolations(text)).toEqual([]));
   });

@@ -19,6 +19,11 @@ describe("fixFrenchTypography", () => {
   it("adds the space when it is missing", () => {
     expect(fixFrenchTypography("«Renvoi»")).toBe(`«${NBSP}Renvoi${NBSP}»`);
   });
+  it("keeps article references together", () => {
+    expect(fixFrenchTypography("l'article L. 442-1 et l'art. 2224, R. 123-1")).toBe(
+      `l'article L.${NBSP}442-1 et l'art.${NBSP}2224, R.${NBSP}123-1`,
+    );
+  });
   it("leaves URLs and times alone", () => {
     expect(fixFrenchTypography("https://x.fr à 10:30")).toBe("https://x.fr à 10:30");
   });

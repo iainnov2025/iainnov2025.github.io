@@ -10,7 +10,9 @@ export function fixFrenchTypography(text: string): string {
     .replace(new RegExp(`(\\S)${SPACES}([;!?])(?=\\s|$|[»)\\]])`, "g"), (_, a, p) => `${a}${NNBSP}${p}`)
     .replace(new RegExp(`(\\S)${SPACES}:(?=\\s|$)`, "g"), (_, a) => `${a}${NBSP}:`)
     .replace(new RegExp(`«${SPACES}`, "g"), `«${NBSP}`)
-    .replace(new RegExp(`${SPACES}»`, "g"), `${NBSP}»`);
+    .replace(new RegExp(`${SPACES}»`, "g"), `${NBSP}»`)
+    // keep article references together: "L. 442-1", "R. 123-1", "art. 2224"
+    .replace(/\b(L|R|D|art)\. (?=\d)/g, `$1.${NBSP}`);
 }
 
 const SKIP_TAGS = new Set(["code", "pre", "script", "style", "svg", "textarea", "kbd", "samp"]);
