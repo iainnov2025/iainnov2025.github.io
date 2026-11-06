@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import Prose from "../components/Prose.astro";
+import { site } from "../config/site";
+---
+<Base title="Cookies" description="Le site LegalVec ne dépose aucun cookie." path="/cookies/">
+  <Prose title="Cookies" updated="6 novembre 2026">
+    {site.analyticsScriptUrl
+      ? <p>Ce site ne dépose aucun cookie. La mesure d'audience est réalisée sans cookie, par un outil auto-hébergé.</p>
+      : <p>Ce site ne dépose aucun cookie et n'utilise aucun traceur. C'est pourquoi aucun bandeau de consentement ne vous est présenté.</p>}
+  </Prose>
+</Base>

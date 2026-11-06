@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import Prose from "../components/Prose.astro";
+import { site } from "../config/site";
+---
+<Base title="Politique de confidentialité" description="Ce site ne collecte aucune donnée personnelle : pas de formulaire, pas de cookie, pas de traceur." path="/confidentialite/">
+  <Prose title="Politique de confidentialité" updated="6 novembre 2026">
+    <h2>Données collectées par ce site</h2>
+    {site.analyticsScriptUrl
+      ? <p>Ce site utilise un outil de mesure d'audience auto-hébergé, sans cookie, qui ne collecte aucune donnée permettant de vous identifier.</p>
+      : <p>Aucune. Ce site ne contient aucun formulaire, ne dépose aucun cookie et n'utilise aucun traceur ni outil de mesure d'audience.</p>}
+    <p>Les polices de caractères sont servies par le site lui-même : aucune requête n'est envoyée à un service tiers lors de votre visite.</p>
+    <h2>Si vous nous écrivez</h2>
+    <p>Si vous nous contactez par courriel, votre message et votre adresse ne servent qu'à vous répondre et à organiser l'échange que vous avez demandé. Ils ne sont ni revendus ni transmis à des tiers.</p>
+    <h2>Hébergement du site</h2>
+    <p>Le site est hébergé par GitHub Pages (GitHub, Inc.), qui peut conserver des journaux techniques de connexion (adresse IP, date) pour assurer la sécurité du service.</p>
+    <h2>Vos droits</h2>
+    <p>Vous disposez d'un droit d'accès, de rectification et d'effacement des données vous concernant, que vous pouvez exercer en nous écrivant. Vous pouvez également saisir la CNIL.</p>
+  </Prose>
+</Base>

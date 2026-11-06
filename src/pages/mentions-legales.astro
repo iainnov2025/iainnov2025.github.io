@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import Prose from "../components/Prose.astro";
+import { site } from "../config/site";
+const todo = "à compléter avant l'ouverture du site";
+---
+<Base title="Mentions légales" description="Mentions légales du site LegalVec : éditeur, directeur de la publication, hébergeur." path="/mentions-legales/">
+  <Prose title="Mentions légales" updated="6 novembre 2026">
+    <h2>Éditeur du site</h2>
+    <p>Ce site est édité par une personne physique, LegalVec n'étant pas encore constitué en société.</p>
+    <ul>
+      <li>Éditeur : {site.publisherName || todo}</li>
+      <li>Adresse : {site.publisherAddress || todo}</li>
+      <li>Contact : {site.contactEmail ? <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> : todo}</li>
+    </ul>
+    <h2>Directeur de la publication</h2>
+    <p>{site.publisherName || todo}</p>
+    <h2>Hébergeur</h2>
+    <p>GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+    <p class="muted">Ce site vitrine ne collecte aucune donnée. L'application LegalVec, qui traitera les dossiers des cabinets, est prévue chez des hébergeurs européens, en France (voir la page <a href="/securite/">Sécurité</a>).</p>
+    <h2>Propriété intellectuelle</h2>
+    <p>Les textes, la marque, le logo et les éléments graphiques de ce site sont la propriété de leur éditeur. Le dossier de démonstration est entièrement fictif ; toute ressemblance avec des personnes ou des sociétés existantes serait fortuite.</p>
+  </Prose>
+</Base>
